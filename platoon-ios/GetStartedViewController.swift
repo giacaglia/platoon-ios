@@ -97,7 +97,8 @@ class GetStartedViewController : UIViewController {
 
     
     func didPressGetStarted() {
-        print("Get Started")
+        let navController = UINavigationController(rootViewController: CreateAccountViewController())
+        self.presentViewController(navController, animated: true) {}
     }
 }
 

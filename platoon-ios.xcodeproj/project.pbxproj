@@ -19,6 +19,11 @@
 		88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB347A1CF4A78200D47A1C /* Cartography.framework */; };
 		88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB347A1CF4A78200D47A1C /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88BB34801CF4B1BA00D47A1C /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */; };
+		88BB34821CF4CD1D00D47A1C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34811CF4CD1D00D47A1C /* CreateAccountViewController.swift */; };
+		88BB34841CF4D74A00D47A1C /* ValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34831CF4D74A00D47A1C /* ValidationViewController.swift */; };
+		88BB34861CF4D77000D47A1C /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34851CF4D77000D47A1C /* PhoneTextField.swift */; };
+		88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */; };
+		88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		88BB347A1CF4A78200D47A1C /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
+		88BB34811CF4CD1D00D47A1C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		88BB34831CF4D74A00D47A1C /* ValidationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationViewController.swift; sourceTree = "<group>"; };
+		88BB34851CF4D77000D47A1C /* PhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,7 @@
 				884C8D961CE66E2600448E70 /* Main.storyboard */,
 				884C8D9B1CE66E2600448E70 /* LaunchScreen.storyboard */,
 				88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */,
+				88BB34851CF4D77000D47A1C /* PhoneTextField.swift */,
 				88BB34771CF49E5E00D47A1C /* ViewControllers */,
 				884C8D991CE66E2600448E70 /* Assets.xcassets */,
 				884C8D9E1CE66E2600448E70 /* Info.plist */,
@@ -156,6 +167,10 @@
 				884C8D921CE66E2600448E70 /* MasterViewController.swift */,
 				884C8D941CE66E2600448E70 /* DetailViewController.swift */,
 				88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */,
+				88BB34811CF4CD1D00D47A1C /* CreateAccountViewController.swift */,
+				88BB34831CF4D74A00D47A1C /* ValidationViewController.swift */,
+				88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */,
+				88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -300,8 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BB34821CF4CD1D00D47A1C /* CreateAccountViewController.swift in Sources */,
+				88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */,
 				884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */,
+				88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */,
+				88BB34861CF4D77000D47A1C /* PhoneTextField.swift in Sources */,
 				884C8D931CE66E2600448E70 /* MasterViewController.swift in Sources */,
+				88BB34841CF4D74A00D47A1C /* ValidationViewController.swift in Sources */,
 				884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */,
 				88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */,
 				88BB34801CF4B1BA00D47A1C /* AppearanceManager.swift in Sources */,
