@@ -44,6 +44,8 @@ class ValidationViewController : UIViewController {
         validationLabel.font = UIFont.boldSystemFontOfSize(23)
         self.view.addSubview(validationLabel)
         
+        
+        validationTextField.font = UIFont(name: "Graphik-Medium", size: 22)
         validationTextField.attributedPlaceholder = NSAttributedString(string:"234-402",
                                                                   attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
         validationTextField.keyboardType = .NumberPad

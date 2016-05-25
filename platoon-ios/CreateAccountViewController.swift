@@ -42,6 +42,7 @@ class CreateAccountViewController : UIViewController {
         phoneLabel.font = UIFont.boldSystemFontOfSize(23)
         self.view.addSubview(phoneLabel)
         
+        phoneTextField.font = UIFont(name: "Graphik-Medium", size: 22)
         phoneTextField.attributedPlaceholder = NSAttributedString(string:"(617) 981-1234",
                                                                attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
         phoneTextField.keyboardType = .NumberPad

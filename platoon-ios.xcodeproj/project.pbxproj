@@ -25,6 +25,24 @@
 		88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */; };
 		88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */; };
 		88BB348E1CF4F8CE00D47A1C /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */; };
+		88BB34B51CF62C6B00D47A1C /* Graphik-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34911CF62C6B00D47A1C /* Graphik-Black.otf */; };
+		88BB34B71CF62C6B00D47A1C /* Graphik-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34931CF62C6B00D47A1C /* Graphik-BlackItalic.otf */; };
+		88BB34B91CF62C6B00D47A1C /* Graphik-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34951CF62C6B00D47A1C /* Graphik-Bold.otf */; };
+		88BB34BB1CF62C6B00D47A1C /* Graphik-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34971CF62C6B00D47A1C /* Graphik-BoldItalic.otf */; };
+		88BB34BD1CF62C6B00D47A1C /* Graphik-Extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34991CF62C6B00D47A1C /* Graphik-Extralight.otf */; };
+		88BB34BF1CF62C6B00D47A1C /* Graphik-ExtralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB349B1CF62C6B00D47A1C /* Graphik-ExtralightItalic.otf */; };
+		88BB34C11CF62C6B00D47A1C /* Graphik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB349D1CF62C6B00D47A1C /* Graphik-Light.otf */; };
+		88BB34C31CF62C6B00D47A1C /* Graphik-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB349F1CF62C6B00D47A1C /* Graphik-LightItalic.otf */; };
+		88BB34C51CF62C6B00D47A1C /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34A11CF62C6B00D47A1C /* Graphik-Medium.otf */; };
+		88BB34C71CF62C6B00D47A1C /* Graphik-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34A31CF62C6B00D47A1C /* Graphik-MediumItalic.otf */; };
+		88BB34C91CF62C6B00D47A1C /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34A51CF62C6B00D47A1C /* Graphik-Regular.otf */; };
+		88BB34CB1CF62C6B00D47A1C /* Graphik-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34A71CF62C6B00D47A1C /* Graphik-RegularItalic.otf */; };
+		88BB34CD1CF62C6B00D47A1C /* Graphik-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34A91CF62C6B00D47A1C /* Graphik-Semibold.otf */; };
+		88BB34CF1CF62C6B00D47A1C /* Graphik-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34AB1CF62C6B00D47A1C /* Graphik-SemiboldItalic.otf */; };
+		88BB34D11CF62C6B00D47A1C /* Graphik-Super.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34AD1CF62C6B00D47A1C /* Graphik-Super.otf */; };
+		88BB34D31CF62C6B00D47A1C /* Graphik-SuperItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34AF1CF62C6B00D47A1C /* Graphik-SuperItalic.otf */; };
+		88BB34D51CF62C6B00D47A1C /* Graphik-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34B11CF62C6B00D47A1C /* Graphik-Thin.otf */; };
+		88BB34D71CF62C6B00D47A1C /* Graphik-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +99,24 @@
 		88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInformationViewController.swift; sourceTree = "<group>"; };
 		88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		88BB34911CF62C6B00D47A1C /* Graphik-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Black.otf"; sourceTree = "<group>"; };
+		88BB34931CF62C6B00D47A1C /* Graphik-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-BlackItalic.otf"; sourceTree = "<group>"; };
+		88BB34951CF62C6B00D47A1C /* Graphik-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Bold.otf"; sourceTree = "<group>"; };
+		88BB34971CF62C6B00D47A1C /* Graphik-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-BoldItalic.otf"; sourceTree = "<group>"; };
+		88BB34991CF62C6B00D47A1C /* Graphik-Extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Extralight.otf"; sourceTree = "<group>"; };
+		88BB349B1CF62C6B00D47A1C /* Graphik-ExtralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-ExtralightItalic.otf"; sourceTree = "<group>"; };
+		88BB349D1CF62C6B00D47A1C /* Graphik-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Light.otf"; sourceTree = "<group>"; };
+		88BB349F1CF62C6B00D47A1C /* Graphik-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-LightItalic.otf"; sourceTree = "<group>"; };
+		88BB34A11CF62C6B00D47A1C /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
+		88BB34A31CF62C6B00D47A1C /* Graphik-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-MediumItalic.otf"; sourceTree = "<group>"; };
+		88BB34A51CF62C6B00D47A1C /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
+		88BB34A71CF62C6B00D47A1C /* Graphik-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-RegularItalic.otf"; sourceTree = "<group>"; };
+		88BB34A91CF62C6B00D47A1C /* Graphik-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Semibold.otf"; sourceTree = "<group>"; };
+		88BB34AB1CF62C6B00D47A1C /* Graphik-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		88BB34AD1CF62C6B00D47A1C /* Graphik-Super.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Super.otf"; sourceTree = "<group>"; };
+		88BB34AF1CF62C6B00D47A1C /* Graphik-SuperItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-SuperItalic.otf"; sourceTree = "<group>"; };
+		88BB34B11CF62C6B00D47A1C /* Graphik-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Thin.otf"; sourceTree = "<group>"; };
+		88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-ThinItalic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				884C8D8F1CE66E2600448E70 /* platoon-ios */,
+				88BB348F1CF62C5300D47A1C /* Resources */,
 				88BB347C1CF4A79D00D47A1C /* Frameworks */,
 				884C8DA61CE66E2600448E70 /* platoon-iosTests */,
 				884C8DB11CE66E2600448E70 /* platoon-iosUITests */,
@@ -184,6 +221,32 @@
 				88BB347A1CF4A78200D47A1C /* Cartography.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88BB348F1CF62C5300D47A1C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88BB34911CF62C6B00D47A1C /* Graphik-Black.otf */,
+				88BB34931CF62C6B00D47A1C /* Graphik-BlackItalic.otf */,
+				88BB34951CF62C6B00D47A1C /* Graphik-Bold.otf */,
+				88BB34971CF62C6B00D47A1C /* Graphik-BoldItalic.otf */,
+				88BB34991CF62C6B00D47A1C /* Graphik-Extralight.otf */,
+				88BB349B1CF62C6B00D47A1C /* Graphik-ExtralightItalic.otf */,
+				88BB349D1CF62C6B00D47A1C /* Graphik-Light.otf */,
+				88BB349F1CF62C6B00D47A1C /* Graphik-LightItalic.otf */,
+				88BB34A11CF62C6B00D47A1C /* Graphik-Medium.otf */,
+				88BB34A31CF62C6B00D47A1C /* Graphik-MediumItalic.otf */,
+				88BB34A51CF62C6B00D47A1C /* Graphik-Regular.otf */,
+				88BB34A71CF62C6B00D47A1C /* Graphik-RegularItalic.otf */,
+				88BB34A91CF62C6B00D47A1C /* Graphik-Semibold.otf */,
+				88BB34AB1CF62C6B00D47A1C /* Graphik-SemiboldItalic.otf */,
+				88BB34AD1CF62C6B00D47A1C /* Graphik-Super.otf */,
+				88BB34AF1CF62C6B00D47A1C /* Graphik-SuperItalic.otf */,
+				88BB34B11CF62C6B00D47A1C /* Graphik-Thin.otf */,
+				88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */,
+			);
+			name = Resources;
+			path = "platoon-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +354,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BB34D71CF62C6B00D47A1C /* Graphik-ThinItalic.otf in Resources */,
+				88BB34B71CF62C6B00D47A1C /* Graphik-BlackItalic.otf in Resources */,
+				88BB34D51CF62C6B00D47A1C /* Graphik-Thin.otf in Resources */,
+				88BB34CD1CF62C6B00D47A1C /* Graphik-Semibold.otf in Resources */,
+				88BB34C11CF62C6B00D47A1C /* Graphik-Light.otf in Resources */,
 				884C8D9D1CE66E2600448E70 /* LaunchScreen.storyboard in Resources */,
+				88BB34C91CF62C6B00D47A1C /* Graphik-Regular.otf in Resources */,
 				884C8D9A1CE66E2600448E70 /* Assets.xcassets in Resources */,
+				88BB34C51CF62C6B00D47A1C /* Graphik-Medium.otf in Resources */,
+				88BB34D31CF62C6B00D47A1C /* Graphik-SuperItalic.otf in Resources */,
+				88BB34C31CF62C6B00D47A1C /* Graphik-LightItalic.otf in Resources */,
+				88BB34BF1CF62C6B00D47A1C /* Graphik-ExtralightItalic.otf in Resources */,
+				88BB34B51CF62C6B00D47A1C /* Graphik-Black.otf in Resources */,
+				88BB34CF1CF62C6B00D47A1C /* Graphik-SemiboldItalic.otf in Resources */,
+				88BB34D11CF62C6B00D47A1C /* Graphik-Super.otf in Resources */,
 				884C8D981CE66E2600448E70 /* Main.storyboard in Resources */,
+				88BB34C71CF62C6B00D47A1C /* Graphik-MediumItalic.otf in Resources */,
+				88BB34BD1CF62C6B00D47A1C /* Graphik-Extralight.otf in Resources */,
+				88BB34B91CF62C6B00D47A1C /* Graphik-Bold.otf in Resources */,
+				88BB34CB1CF62C6B00D47A1C /* Graphik-RegularItalic.otf in Resources */,
+				88BB34BB1CF62C6B00D47A1C /* Graphik-BoldItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -487,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

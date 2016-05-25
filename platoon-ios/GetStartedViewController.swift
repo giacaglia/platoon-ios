@@ -45,11 +45,12 @@ class GetStartedViewController : UIViewController {
         let getStartedButton = UIButton()
         getStartedButton.setTitle("Get Started", forState: .Normal)
         getStartedButton.setTitleColor(AppearanceManager.sharedInstance.cerulean, forState: .Normal)
-        getStartedButton.titleLabel?.font = UIFont(name: "SFUIText-Black", size: 20.0)
+        getStartedButton.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
         getStartedButton.addTarget(self, action: #selector(didPressGetStarted), forControlEvents: .TouchUpInside)
+        getStartedButton.setImage(UIImage(named: "arrow_forward"), forState: .Normal)
         self.view.addSubview(getStartedButton)
         constrain(getStartedButton) { getStartedButton in
-            getStartedButton.bottom  == getStartedButton.superview!.bottom - 40
+            getStartedButton.bottom  == getStartedButton.superview!.bottom - 20
             getStartedButton.centerX == getStartedButton.superview!.centerX
             
         }
@@ -93,6 +94,7 @@ class GetStartedViewController : UIViewController {
             subtitleLabel.width   == 230
             subtitleLabel.centerX == subtitleLabel.superview!.centerX + CGFloat(sumUp)
         }
+        
     }
 
     
