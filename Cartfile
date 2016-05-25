@@ -1,1 +1,2 @@
-github "robb/Cartography" # GitHub.com
+github "robb/Cartography" # Cartography
+github "realm/realm-cocoa" # Realm database

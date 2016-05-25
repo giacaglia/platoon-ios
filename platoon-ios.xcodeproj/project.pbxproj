@@ -43,6 +43,8 @@
 		88BB34D31CF62C6B00D47A1C /* Graphik-SuperItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34AF1CF62C6B00D47A1C /* Graphik-SuperItalic.otf */; };
 		88BB34D51CF62C6B00D47A1C /* Graphik-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34B11CF62C6B00D47A1C /* Graphik-Thin.otf */; };
 		88BB34D71CF62C6B00D47A1C /* Graphik-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */; };
+		88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34D81CF63A7A00D47A1C /* Realm.framework */; };
+		88BB34DB1CF63A8100D47A1C /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB34D81CF63A7A00D47A1C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				88BB34DB1CF63A8100D47A1C /* Realm.framework in CopyFiles */,
 				88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +120,7 @@
 		88BB34AF1CF62C6B00D47A1C /* Graphik-SuperItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-SuperItalic.otf"; sourceTree = "<group>"; };
 		88BB34B11CF62C6B00D47A1C /* Graphik-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Thin.otf"; sourceTree = "<group>"; };
 		88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-ThinItalic.otf"; sourceTree = "<group>"; };
+		88BB34D81CF63A7A00D47A1C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
 				88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +223,7 @@
 		88BB347C1CF4A79D00D47A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88BB34D81CF63A7A00D47A1C /* Realm.framework */,
 				88BB347A1CF4A78200D47A1C /* Cartography.framework */,
 			);
 			name = Frameworks;
