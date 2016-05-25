@@ -18,8 +18,13 @@ class AppearanceManager {
     let peacockBlue = UIColor(red: 0.0, green: 108.0 / 255.0, blue: 144.0 / 255.0, alpha: 1.0)
     let backgroundColor = UIColor(white: 250/255.0, alpha: 1.0)
     let gunmetal = UIColor(red: 86.0 / 255.0, green: 95.0 / 255.0, blue: 101.0 / 255.0, alpha: 1.0)
+    let greyishBrown = UIColor(white: 83.0 / 255.0, alpha: 1.0)
     
     
+    static func regularFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "Graphik", size: size)!
+    }
+ 
     static func mediumFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik-Medium", size: size)!
     }
@@ -28,9 +33,14 @@ class AppearanceManager {
         return UIFont(name: "Graphik-Black", size: size)!
     }
     
+    static func semiboldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "Graphik-Semibold", size: size)!
+    }
+    
     static func boldFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik-Bold", size: size)!
     }
+    
     static func lightFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik-Light", size: size)!
     }
