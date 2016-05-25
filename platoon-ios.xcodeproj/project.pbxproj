@@ -45,6 +45,8 @@
 		88BB34D71CF62C6B00D47A1C /* Graphik-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */; };
 		88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34D81CF63A7A00D47A1C /* Realm.framework */; };
 		88BB34DB1CF63A8100D47A1C /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB34D81CF63A7A00D47A1C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88BB34DD1CF6437C00D47A1C /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34DC1CF6437C00D47A1C /* Load.swift */; };
+		88BB34E11CF6444100D47A1C /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E01CF6444100D47A1C /* Company.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		88BB34B11CF62C6B00D47A1C /* Graphik-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Thin.otf"; sourceTree = "<group>"; };
 		88BB34B31CF62C6B00D47A1C /* Graphik-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-ThinItalic.otf"; sourceTree = "<group>"; };
 		88BB34D81CF63A7A00D47A1C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		88BB34DC1CF6437C00D47A1C /* Load.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
+		88BB34E01CF6444100D47A1C /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +183,8 @@
 				884C8D961CE66E2600448E70 /* Main.storyboard */,
 				884C8D9B1CE66E2600448E70 /* LaunchScreen.storyboard */,
 				88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */,
-				88BB34851CF4D77000D47A1C /* PhoneTextField.swift */,
+				88BB34DE1CF6438600D47A1C /* Extensions */,
+				88BB34DF1CF6439D00D47A1C /* Objects */,
 				88BB34771CF49E5E00D47A1C /* ViewControllers */,
 				884C8D991CE66E2600448E70 /* Assets.xcassets */,
 				884C8D9E1CE66E2600448E70 /* Info.plist */,
@@ -253,6 +258,23 @@
 			);
 			name = Resources;
 			path = "platoon-ios";
+			sourceTree = "<group>";
+		};
+		88BB34DE1CF6438600D47A1C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88BB34851CF4D77000D47A1C /* PhoneTextField.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		88BB34DF1CF6439D00D47A1C /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				88BB34DC1CF6437C00D47A1C /* Load.swift */,
+				88BB34E01CF6444100D47A1C /* Company.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BB34821CF4CD1D00D47A1C /* CreateAccountViewController.swift in Sources */,
+				88BB34DD1CF6437C00D47A1C /* Load.swift in Sources */,
 				88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */,
 				884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */,
 				88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */,
@@ -415,6 +438,7 @@
 				884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */,
 				88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */,
 				88BB34801CF4B1BA00D47A1C /* AppearanceManager.swift in Sources */,
+				88BB34E11CF6444100D47A1C /* Company.swift in Sources */,
 				88BB348E1CF4F8CE00D47A1C /* ThankYouViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

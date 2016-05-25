@@ -86,7 +86,7 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 77.0
+        return NameTableViewCell.height()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -104,6 +104,10 @@ class NameTableViewCell : UITableViewCell {
         return "NameTableViewCell"
     }
     
+    static func height() -> CGFloat {
+        return 77.0
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setup()
@@ -117,6 +121,7 @@ class NameTableViewCell : UITableViewCell {
     private func setup() {
         self.selectionStyle = .None
         textField.autocorrectionType = .No
+        textField.font = AppearanceManager.mediumFont(18)
         self.contentView.addSubview(textField)
         
         constrain(textField) { textField in

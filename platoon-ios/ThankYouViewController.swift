@@ -24,7 +24,7 @@ class ThankYouViewController : UIViewController {
         thankYouLabel.textAlignment = .Center
         thankYouLabel.numberOfLines = 2
         thankYouLabel.textColor = AppearanceManager.sharedInstance.greyBlue
-        thankYouLabel.font = UIFont.boldSystemFontOfSize(24.0)
+        thankYouLabel.font = AppearanceManager.blackFont(24)
         self.view.addSubview(thankYouLabel)
         
         
@@ -38,7 +38,7 @@ class ThankYouViewController : UIViewController {
         numberTruckersLabel.textAlignment = .Center
         numberTruckersLabel.numberOfLines = 2
         numberTruckersLabel.textColor = .whiteColor()
-        numberTruckersLabel.font = UIFont.boldSystemFontOfSize(24)
+        numberTruckersLabel.font = AppearanceManager.blackFont(24)
         ticketImageView.addSubview(numberTruckersLabel)
         
         constrain(thankYouLabel, ticketImageView, numberTruckersLabel) { thankYouLabel, ticketImageView, numberTruckersLabel in
@@ -59,7 +59,7 @@ class ThankYouViewController : UIViewController {
         interestedInLabel.textAlignment = .Center
         interestedInLabel.numberOfLines = 2
         interestedInLabel.textColor = AppearanceManager.sharedInstance.greyBlue
-        interestedInLabel.font = UIFont.boldSystemFontOfSize(24.0)
+        interestedInLabel.font = AppearanceManager.blackFont(24)
         self.view.addSubview(interestedInLabel)
         
         let getPriorityLabel = UILabel()
@@ -67,6 +67,7 @@ class ThankYouViewController : UIViewController {
         getPriorityLabel.font = UIFont(name: "Helvetica", size: 18)
         getPriorityLabel.numberOfLines = 0
         getPriorityLabel.textAlignment = .Center
+        getPriorityLabel.textColor = AppearanceManager.sharedInstance.gunmetal
         self.view.addSubview(getPriorityLabel)
         
         constrain(interestedInLabel, getPriorityLabel) { interestedInLabel, getPriorityLabel in
@@ -80,10 +81,10 @@ class ThankYouViewController : UIViewController {
         
         let shareNowButton = UIButton()
         shareNowButton.backgroundColor = AppearanceManager.sharedInstance.peacockBlue
+        shareNowButton.titleLabel!.font = AppearanceManager.boldFont(20)
         shareNowButton.setTitle("Share now", forState: .Normal)
         shareNowButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         shareNowButton.addTarget(self, action: #selector(didPressShare), forControlEvents: .TouchUpInside)
-        shareNowButton.titleLabel!.font = UIFont.boldSystemFontOfSize(20)
         self.view.addSubview(shareNowButton)
         
         constrain(shareNowButton) { shareNowButton in
@@ -95,12 +96,15 @@ class ThankYouViewController : UIViewController {
     }
     
     func didPressShare() {
-        let textToShare = "Swift is awesome!  Check out this website about it!"
         
-        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/") {
-            let objectsToShare = [textToShare, myWebsite]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            self.presentViewController(activityVC, animated: true, completion: nil)
-        }
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {
+        })
+//        let textToShare = "Swift is awesome!  Check out this website about it!"
+//        
+//        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/") {
+//            let objectsToShare = [textToShare, myWebsite]
+//            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+//            self.presentViewController(activityVC, animated: true, completion: nil)
+//        }
     }
 }

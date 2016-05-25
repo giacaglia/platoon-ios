@@ -16,12 +16,15 @@ class GetStartedViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(scrollView)
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
         scrollView.pagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
         scrollView.contentSize = CGSizeMake(3*self.view.frame.size.width, self.view.frame.height)
-        
+        self.view.addSubview(scrollView)
+
         constrain(scrollView) { scrollView in
             scrollView.height == scrollView.superview!.height
             scrollView.width  == scrollView.superview!.width
@@ -54,6 +57,10 @@ class GetStartedViewController : UIViewController {
             getStartedButton.centerX == getStartedButton.superview!.centerX
             
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     private func addImageTextIndex(pageIndex: Int, imageName: String, titleText: String, subtitleText: String) {

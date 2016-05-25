@@ -35,6 +35,11 @@ class BankInformationViewController : UIViewController {
         self.addRightBarButton()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: { })
+    }
+    
     func addRightBarButton() {
         let rightButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(done))
         self.navigationItem.rightBarButtonItem = rightButton
@@ -63,6 +68,11 @@ extension BankInformationViewController : UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 77.0
+        return NameTableViewCell.height()
     }
+    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
+//        cell.textField.becomeFirstResponder()
+//    }
 }

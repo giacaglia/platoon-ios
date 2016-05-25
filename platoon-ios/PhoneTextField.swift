@@ -9,8 +9,6 @@
 import UIKit
 
 class PhoneTextField: UITextField, UITextFieldDelegate {
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.delegate = self
