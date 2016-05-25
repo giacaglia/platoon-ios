@@ -16,7 +16,6 @@ class GetStartedViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         scrollView.pagingEnabled = true

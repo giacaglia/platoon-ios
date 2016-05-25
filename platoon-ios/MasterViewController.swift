@@ -7,33 +7,28 @@
 //
 
 import UIKit
+import Cartography
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
+    var objects = [Load]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "Loads"
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
+        self.navigationController?.navigationBar.tintColor = .whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName:AppearanceManager.boldFont(20)]
         
-
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(insertNewObject(_:)))
-//        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
+        self.tableView.registerClass(LoadCell.self, forCellReuseIdentifier: LoadCell.cellIdentifier())
+        
+        self.tableView.separatorStyle = .None
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-//        self.presentViewController(GetStartedViewController(), animated: true) {}
     }
-
-
-
-
 }
 
 extension MasterViewController {
@@ -46,26 +41,60 @@ extension MasterViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
         
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row]
+        cell.setLoad(object)
         return cell
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
-
 }
 
+class LoadCell : UITableViewCell {
+    let nameLabel = UILabel()
+    
+    static func cellIdentifier() -> String {
+        return "LoadCell"
+    }
+    
+    static func height() -> CGFloat {
+        return 157.0
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setup()
+    }
+    
+    private func setup() {
+        self.selectionStyle = .None
+      
+        self.contentView.addSubview(nameLabel)
+        
+        constrain(nameLabel) { nameLabel in
+            nameLabel.left    == nameLabel.superview!.left + 21
+            nameLabel.centerY == nameLabel.superview!.centerY
+            nameLabel.width   == nameLabel.superview!.width - 42
+        }
+        
+        let lineView = UIView()
+        lineView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
+        self.contentView.addSubview(lineView)
+        constrain(lineView) { lineView in
+            lineView.left    == lineView.superview!.left
+            lineView.right   == lineView.superview!.right
+            lineView.bottom  == lineView.superview!.bottom
+            lineView.height == 1
+        }
+    }
+    
+    func setLoad(load: Load) {
+        self.nameLabel.text = load.company.name
+    }
+    
+}
