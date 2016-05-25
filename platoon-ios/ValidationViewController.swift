@@ -41,13 +41,14 @@ class ValidationViewController : UIViewController {
         validationLabel.numberOfLines = 2
         validationLabel.textAlignment = .Center
         validationLabel.textColor = AppearanceManager.sharedInstance.greyBlue
-        validationLabel.font = UIFont.boldSystemFontOfSize(23)
+        validationLabel.font = UIFont(name: "Graphik-Black", size: 22)
         self.view.addSubview(validationLabel)
         
         
         validationTextField.font = UIFont(name: "Graphik-Medium", size: 22)
         validationTextField.attributedPlaceholder = NSAttributedString(string:"234-402",
                                                                   attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
+        validationTextField.delegate = self
         validationTextField.keyboardType = .NumberPad
         self.view.addSubview(validationTextField)
         
@@ -58,5 +59,36 @@ class ValidationViewController : UIViewController {
             validationTextField.top     == validationTextField.superview!.top + 240
             validationTextField.centerX == validationTextField.superview!.centerX
         }
+    }
+}
+
+extension ValidationViewController : UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+        
+        let decimalString = components.joinWithSeparator("") as NSString
+        let length = decimalString.length
+        
+        if length == 0 || length > 6
+        {
+            let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
+            
+            return (newLength > 64) ? false : true
+        }
+        var index = 0 as Int
+        let formattedString = NSMutableString()
+        
+        if length - index > 3
+        {
+            let prefix = decimalString.substringWithRange(NSMakeRange(index, 3))
+            formattedString.appendFormat("%@-", prefix)
+            index += 3
+        }
+        
+        let remainder = decimalString.substringFromIndex(index)
+        formattedString.appendString(remainder)
+        textField.text = formattedString as String
+        return false
     }
 }

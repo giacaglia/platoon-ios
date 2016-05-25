@@ -60,7 +60,6 @@ class PhoneTextField: UITextField, UITextFieldDelegate {
         formattedString.appendString(remainder)
         textField.text = formattedString as String
         return false
-    
     }
 }
 

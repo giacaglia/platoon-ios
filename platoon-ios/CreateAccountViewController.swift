@@ -39,7 +39,7 @@ class CreateAccountViewController : UIViewController {
         phoneLabel.text = "Enter your phone number:"
         phoneLabel.textAlignment = .Center
         phoneLabel.textColor = AppearanceManager.sharedInstance.greyBlue
-        phoneLabel.font = UIFont.boldSystemFontOfSize(23)
+        phoneLabel.font = UIFont(name: "Graphik-Black", size: 22)
         self.view.addSubview(phoneLabel)
         
         phoneTextField.font = UIFont(name: "Graphik-Medium", size: 22)
