@@ -24,14 +24,26 @@ class BankInformationViewController : UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .None
         constrain(tableView) { tableView in
             tableView.bottom == tableView.superview!.bottom
             tableView.top    == tableView.superview!.top
             tableView.left   == tableView.superview!.left
             tableView.right  == tableView.superview!.right
         }
-
+        
+        self.addRightBarButton()
     }
+    
+    func addRightBarButton() {
+        let rightButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(done))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func done() {
+        self.presentViewController(ThankYouViewController(), animated: true) { }
+    }
+
 }
 
 

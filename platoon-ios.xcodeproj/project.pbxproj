@@ -24,6 +24,7 @@
 		88BB34861CF4D77000D47A1C /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34851CF4D77000D47A1C /* PhoneTextField.swift */; };
 		88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */; };
 		88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */; };
+		88BB348E1CF4F8CE00D47A1C /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		88BB34851CF4D77000D47A1C /* PhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInformationViewController.swift; sourceTree = "<group>"; };
+		88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				88BB34831CF4D74A00D47A1C /* ValidationViewController.swift */,
 				88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */,
 				88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */,
+				88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */,
 				88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */,
 				88BB34801CF4B1BA00D47A1C /* AppearanceManager.swift in Sources */,
+				88BB348E1CF4F8CE00D47A1C /* ThankYouViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

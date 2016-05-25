@@ -28,6 +28,7 @@ class DetailsViewController : UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
+        tableView.separatorStyle = .None
         tableView.tableFooterView = UIView()
         constrain(tableView) { tableView in
             tableView.bottom == tableView.superview!.bottom
@@ -43,7 +44,6 @@ class DetailsViewController : UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
     
     func addRightBarButton() {
         let rightButton = UIBarButtonItem(title: "Next", style: .Done, target: self, action: #selector(next))
@@ -87,6 +87,11 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 77.0
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
+        cell.textField.becomeFirstResponder()
+    }
 }
 
 
@@ -118,6 +123,17 @@ class NameTableViewCell : UITableViewCell {
             textField.centerY == textField.superview!.centerY
             textField.width   == textField.superview!.width - 42
         }
+        
+        let lineView = UIView()
+        lineView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
+        self.contentView.addSubview(lineView)
+        constrain(lineView) { lineView in
+            lineView.left    == lineView.superview!.left
+            lineView.right   == lineView.superview!.right
+            lineView.bottom  == lineView.superview!.bottom
+            lineView.height == 1
+        }
+        
     }
     
     func setQuestion(placeholderText: String) {

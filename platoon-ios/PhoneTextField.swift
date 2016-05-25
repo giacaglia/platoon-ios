@@ -29,7 +29,7 @@ class PhoneTextField: UITextField, UITextFieldDelegate {
         let length = decimalString.length
         let hasLeadingOne = length > 0 && decimalString.characterAtIndex(0) == (1 as unichar)
         
-        if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+        if length == 0 || (length > 11 && !hasLeadingOne) || length > 12
         {
             let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
             
@@ -46,7 +46,7 @@ class PhoneTextField: UITextField, UITextFieldDelegate {
         if (length - index) > 3
         {
             let areaCode = decimalString.substringWithRange(NSMakeRange(index, 3))
-            formattedString.appendFormat("(%@)", areaCode)
+            formattedString.appendFormat("(%@) ", areaCode)
             index += 3
         }
         if length - index > 3
