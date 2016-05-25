@@ -16,6 +16,11 @@ class CreateAccountViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
         self.title = "Create an Account"
+        self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
+        self.navigationController?.navigationBar.tintColor = .whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName:AppearanceManager.boldFont(20)]
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+
         self.addTitle()
         self.addRightBarButton()
     }
@@ -39,10 +44,10 @@ class CreateAccountViewController : UIViewController {
         phoneLabel.text = "Enter your phone number:"
         phoneLabel.textAlignment = .Center
         phoneLabel.textColor = AppearanceManager.sharedInstance.greyBlue
-        phoneLabel.font = UIFont(name: "Graphik-Black", size: 22)
+        phoneLabel.font = AppearanceManager.blackFont(22)
         self.view.addSubview(phoneLabel)
         
-        phoneTextField.font = UIFont(name: "Graphik-Medium", size: 22)
+        phoneTextField.font = AppearanceManager.mediumFont(22)
         phoneTextField.attributedPlaceholder = NSAttributedString(string:"(617) 981-1234",
                                                                attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
         phoneTextField.keyboardType = .NumberPad
@@ -55,5 +60,9 @@ class CreateAccountViewController : UIViewController {
             phoneTextField.top     == phoneLabel.bottom + 50
             phoneTextField.centerX == phoneTextField.superview!.centerX
         }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }

@@ -72,7 +72,7 @@ class GetStartedViewController : UIViewController {
         
         let titleLabel = UILabel()
         titleLabel.text = titleText
-        titleLabel.font = UIFont.systemFontOfSize(24.0)
+        titleLabel.font = AppearanceManager.blackFont(24)
         titleLabel.textAlignment = .Center
         titleLabel.textColor = AppearanceManager.sharedInstance.greyBlue
         scrollView.addSubview(titleLabel)
@@ -80,7 +80,7 @@ class GetStartedViewController : UIViewController {
         
         let subtitleLabel = UILabel()
         subtitleLabel.text = subtitleText
-        subtitleLabel.font = UIFont(name: "SFUIText-Light", size: 19)
+        subtitleLabel.font = AppearanceManager.lightFont(19)
         subtitleLabel.numberOfLines = 2
         subtitleLabel.textAlignment = .Center
         subtitleLabel.textColor = AppearanceManager.sharedInstance.greyBlue
@@ -91,7 +91,7 @@ class GetStartedViewController : UIViewController {
             titleLabel.centerX    == titleLabel.superview!.centerX + CGFloat(sumUp)
             
             subtitleLabel.top     == titleLabel.bottom + 14
-            subtitleLabel.width   == 230
+            subtitleLabel.width   == 260
             subtitleLabel.centerX == subtitleLabel.superview!.centerX + CGFloat(sumUp)
         }
         

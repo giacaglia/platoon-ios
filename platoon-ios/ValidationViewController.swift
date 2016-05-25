@@ -16,6 +16,7 @@ class ValidationViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
         self.title = "Create an Account"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
         self.addTitle()
         self.addRightBarButton()
@@ -37,15 +38,15 @@ class ValidationViewController : UIViewController {
     
     func addTitle() {
         let validationLabel = UILabel()
-        validationLabel.text = "Enter the validation\ncode"
+        validationLabel.text = "Enter the validation\ncode:"
         validationLabel.numberOfLines = 2
         validationLabel.textAlignment = .Center
         validationLabel.textColor = AppearanceManager.sharedInstance.greyBlue
-        validationLabel.font = UIFont(name: "Graphik-Black", size: 22)
+        validationLabel.font = AppearanceManager.blackFont(22)
         self.view.addSubview(validationLabel)
         
         
-        validationTextField.font = UIFont(name: "Graphik-Medium", size: 22)
+        validationTextField.font = AppearanceManager.mediumFont(22)
         validationTextField.attributedPlaceholder = NSAttributedString(string:"234-402",
                                                                   attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
         validationTextField.delegate = self
@@ -74,7 +75,7 @@ extension ValidationViewController : UITextFieldDelegate {
         {
             let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
             
-            return (newLength > 64) ? false : true
+            return (newLength > 6) ? false : true
         }
         var index = 0 as Int
         let formattedString = NSMutableString()
