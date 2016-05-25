@@ -17,4 +17,6 @@ class Load : Object {
     dynamic var timePickUp = NSDate()
     dynamic var loadType = "Reefeer"
     dynamic var numberPallets = 0
+    dynamic var totalPrice = 200.00
+    dynamic var pricePerLoad = 2.00
 }
