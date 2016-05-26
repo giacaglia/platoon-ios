@@ -33,7 +33,7 @@ class MasterViewController: UITableViewController {
 
 extension MasterViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -50,11 +50,21 @@ extension MasterViewController {
 }
 
 class LoadCell : UITableViewCell {
-    let nameLabel = UILabel()
-    let ratingLabel = UILabel()
-    let pickUpLabel = UILabel()
-    let arrowImageView = UIImageView()
-    let dropOffLabel = UILabel()
+    let nameLabel         = UILabel()
+    let ratingLabel       = UILabel()
+    let pickUpLabel       = UILabel()
+    let arrowImageView    = UIImageView()
+    let dropOffLabel      = UILabel()
+    let clockImageView    = UIImageView()
+    let timeLabel         = UILabel()
+    let locationImageView = UIImageView()
+    let distanceLabel     = UILabel()
+    let cargoImageView    = UIImageView()
+    let truckLabel        = UILabel()
+    let palletImageView   = UIImageView()
+    let numberPalletLabel = UILabel()
+    let totalPriceLabel   = UILabel()
+    let priceMileLabel    = UILabel()
     
     static func cellIdentifier() -> String {
         return "LoadCell"
@@ -133,6 +143,104 @@ class LoadCell : UITableViewCell {
             arrowImageView.left == arrowImageView.superview!.left + 110
         }
         
+        
+        clockImageView.image = UIImage(named: "clock")
+        self.contentView.addSubview(clockImageView)
+        
+        timeLabel.textAlignment = .Left
+        timeLabel.font = AppearanceManager.regularFont(14)
+        timeLabel.textColor = AppearanceManager.sharedInstance.gunmetal
+        timeLabel.text = "10:50 am"
+        self.contentView.addSubview(timeLabel)
+        
+        locationImageView.image = UIImage(named: "location")
+        self.contentView.addSubview(locationImageView)
+        
+        distanceLabel.textAlignment = .Left
+        distanceLabel.font = AppearanceManager.regularFont(14)
+        distanceLabel.textColor = AppearanceManager.sharedInstance.gunmetal
+        distanceLabel.text = "4 miles"
+        self.contentView.addSubview(distanceLabel)
+        
+        constrain(clockImageView, timeLabel, locationImageView, distanceLabel) { clockImageView, timeLabel, locationImageView, distanceLabel in
+            clockImageView.left   == clockImageView.superview!.left + 16
+            clockImageView.top    == clockImageView.superview!.top + 76
+            clockImageView.width  == 25
+            clockImageView.height == 24
+            
+            timeLabel.left   == timeLabel.superview!.left + 53
+            timeLabel.bottom == clockImageView.bottom
+            timeLabel.height == 22
+            
+            locationImageView.left    == locationImageView.superview!.left + 140
+            locationImageView.bottom  == clockImageView.bottom
+            locationImageView.height  == 28
+            
+            distanceLabel.left   == distanceLabel.superview!.left + 172
+            distanceLabel.bottom == locationImageView.bottom
+            distanceLabel.height == 22
+        }
+        
+        cargoImageView.image = UIImage(named:"cargo")
+        self.contentView.addSubview(cargoImageView)
+        
+        truckLabel.textAlignment = .Left
+        truckLabel.font = AppearanceManager.regularFont(14)
+        truckLabel.textColor = AppearanceManager.sharedInstance.gunmetal
+        truckLabel.text = "Reefeer"
+        self.contentView.addSubview(truckLabel)
+        
+        palletImageView.image = UIImage(named:"pallet")
+        self.contentView.addSubview(palletImageView)
+        
+        numberPalletLabel.textAlignment = .Left
+        numberPalletLabel.font = AppearanceManager.regularFont(14)
+        numberPalletLabel.textColor = AppearanceManager.sharedInstance.gunmetal
+        numberPalletLabel.text = "3 pallets"
+        self.contentView.addSubview(numberPalletLabel)
+        
+        constrain(cargoImageView, truckLabel, palletImageView, numberPalletLabel) { cargoImageView, truckLabel, palletImageView, numberPalletLabel in
+            cargoImageView.left   == cargoImageView.superview!.left + 12
+            cargoImageView.top    == cargoImageView.superview!.top + 110
+            cargoImageView.width  == 32
+            cargoImageView.height == 26
+            
+            truckLabel.left   == truckLabel.superview!.left + 53
+            truckLabel.bottom == cargoImageView.bottom
+            truckLabel.height == 22
+            
+            palletImageView.left   == palletImageView.superview!.left + 131
+            palletImageView.bottom == cargoImageView.bottom
+            palletImageView.height == 32
+            
+            numberPalletLabel.left   == numberPalletLabel.superview!.left + 172
+            numberPalletLabel.bottom == cargoImageView.bottom
+            numberPalletLabel.height == 22
+        }
+        
+        
+        totalPriceLabel.textAlignment = .Right
+        totalPriceLabel.font = AppearanceManager.semiboldFont(20)
+        totalPriceLabel.textColor = AppearanceManager.sharedInstance.battleshipGrey
+        totalPriceLabel.text = "$200.00"
+        self.contentView.addSubview(totalPriceLabel)
+        
+        priceMileLabel.textAlignment = .Right
+        priceMileLabel.font = AppearanceManager.regularFont(14)
+        priceMileLabel.textColor = AppearanceManager.sharedInstance.battleshipGrey
+        priceMileLabel.text = "$1.60/mile"
+        self.contentView.addSubview(priceMileLabel)
+        
+        constrain(totalPriceLabel, priceMileLabel) { totalPriceLabel, priceMileLabel in
+            totalPriceLabel.right  == totalPriceLabel.superview!.right - 15
+            totalPriceLabel.top    == totalPriceLabel.superview!.top + 98
+            totalPriceLabel.height == 20
+            
+            priceMileLabel.right  == priceMileLabel.superview!.right - 15
+            priceMileLabel.top    == priceMileLabel.superview!.top + 123
+            priceMileLabel.height == 15
+        }
+        
         let lineView = UIView()
         lineView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.contentView.addSubview(lineView)
@@ -146,6 +254,9 @@ class LoadCell : UITableViewCell {
     
     func setLoad(load: Load) {
         self.nameLabel.text = load.company.name
+        self.ratingLabel.text = String(load.company.rating)
+        self.pickUpLabel.text = load.pickUp
+        self.dropOffLabel.text = load.dropOff
     }
     
 }

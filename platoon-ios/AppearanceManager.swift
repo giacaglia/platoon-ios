@@ -19,7 +19,8 @@ class AppearanceManager {
     let backgroundColor = UIColor(white: 250/255.0, alpha: 1.0)
     let gunmetal = UIColor(red: 86.0 / 255.0, green: 95.0 / 255.0, blue: 101.0 / 255.0, alpha: 1.0)
     let greyishBrown = UIColor(white: 83.0 / 255.0, alpha: 1.0)
-    
+    let battleshipGrey = UIColor(red: 105.0 / 255.0, green: 114.0 / 255.0, blue: 120.0 / 255.0, alpha: 1.0)
+
     
     static func regularFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik", size: size)!
