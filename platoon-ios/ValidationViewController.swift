@@ -16,7 +16,6 @@ class ValidationViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
         self.title = "Create an Account"
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
         self.addTitle()
         self.addRightBarButton()

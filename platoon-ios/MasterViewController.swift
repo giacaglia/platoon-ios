@@ -47,6 +47,10 @@ extension MasterViewController {
 //        cell.setLoad(object)
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.navigationController?.pushViewController(LoadViewController(), animated: true)
+    }
 }
 
 class LoadCell : UITableViewCell {

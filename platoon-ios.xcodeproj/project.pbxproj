@@ -50,6 +50,7 @@
 		88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; };
 		88BB34E41CF647CD00D47A1C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; };
 		88BB34E51CF647CD00D47A1C /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88BB34E81CF699E500D47A1C /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E71CF699E500D47A1C /* LoadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		88BB34DC1CF6437C00D47A1C /* Load.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		88BB34E01CF6444100D47A1C /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		88BB34E21CF647C900D47A1C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		88BB34E71CF699E500D47A1C /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +224,8 @@
 			children = (
 				884C8D921CE66E2600448E70 /* MasterViewController.swift */,
 				884C8D941CE66E2600448E70 /* DetailViewController.swift */,
-				88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */,
-				88BB34811CF4CD1D00D47A1C /* CreateAccountViewController.swift */,
-				88BB34831CF4D74A00D47A1C /* ValidationViewController.swift */,
-				88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */,
-				88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */,
-				88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */,
+				88BB34E71CF699E500D47A1C /* LoadViewController.swift */,
+				88BB34E61CF699CC00D47A1C /* Onboarding */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +281,19 @@
 				88BB34E01CF6444100D47A1C /* Company.swift */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		88BB34E61CF699CC00D47A1C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */,
+				88BB34811CF4CD1D00D47A1C /* CreateAccountViewController.swift */,
+				88BB34831CF4D74A00D47A1C /* ValidationViewController.swift */,
+				88BB34891CF4E7C300D47A1C /* DetailsViewController.swift */,
+				88BB348B1CF4F15500D47A1C /* BankInformationViewController.swift */,
+				88BB348D1CF4F8CE00D47A1C /* ThankYouViewController.swift */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +448,7 @@
 			files = (
 				88BB34821CF4CD1D00D47A1C /* CreateAccountViewController.swift in Sources */,
 				88BB34DD1CF6437C00D47A1C /* Load.swift in Sources */,
+				88BB34E81CF699E500D47A1C /* LoadViewController.swift in Sources */,
 				88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */,
 				884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */,
 				88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */,
