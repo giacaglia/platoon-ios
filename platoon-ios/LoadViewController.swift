@@ -14,6 +14,8 @@ class LoadViewController : UIViewController {
     
     let mapView = MKMapView()
     let topMapView = MKMapView()
+    let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
@@ -41,8 +43,18 @@ class LoadViewController : UIViewController {
         constrain(topMapView) { topMapView in
             topMapView.top     == topMapView.superview!.top + 72
             topMapView.centerX == topMapView.superview!.centerX
-            topMapView.width  == 184
-            topMapView.height == 184
+            topMapView.width   == 184
+            topMapView.height  == 184
+        }
+        
+        tableView.registerClass(AnsweredCell.self, forCellReuseIdentifier: AnsweredCell.cellIdentifier())
+        tableView.separatorStyle = .None
+        self.view.addSubview(tableView)
+        constrain(tableView) { tableView in
+            tableView.top    == tableView.superview!.top + 210
+            tableView.left   == tableView.superview!.left
+            tableView.right  == tableView.superview!.right
+            tableView.bottom == tableView.superview!.bottom
         }
     }
     
@@ -72,5 +84,50 @@ class LoadViewController : UIViewController {
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+}
 
+class AnsweredCell : UITableViewCell {
+    let titleLabel = UITextField()
+    
+    static func cellIdentifier() -> String {
+        return "AnsweredCell"
+    }
+    
+    static func height() -> CGFloat {
+        return 78.0
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setup()
+    }
+    
+    private func setup() {
+        self.selectionStyle = .None
+        titleLabel.textAlignment = .Left
+        titleLabel.font = AppearanceManager.semiboldFont(14)
+        self.contentView.addSubview(titleLabel)
+        
+        constrain(titleLabel) { titleLabel in
+            titleLabel.left == titleLabel.superview!.left + 21
+            titleLabel.top  == titleLabel.superview!.top + 15
+        }
+        
+        let lineView = UIView()
+        lineView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
+        self.contentView.addSubview(lineView)
+        constrain(lineView) { lineView in
+            lineView.left    == lineView.superview!.left
+            lineView.right   == lineView.superview!.right
+            lineView.bottom  == lineView.superview!.bottom
+            lineView.height == 1
+        }
+        
+    }
+    
 }
