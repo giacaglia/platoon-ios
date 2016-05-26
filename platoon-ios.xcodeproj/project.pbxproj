@@ -51,6 +51,8 @@
 		88BB34E41CF647CD00D47A1C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; };
 		88BB34E51CF647CD00D47A1C /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88BB34E81CF699E500D47A1C /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E71CF699E500D47A1C /* LoadViewController.swift */; };
+		88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */; };
+		88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		88BB34E01CF6444100D47A1C /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		88BB34E21CF647C900D47A1C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		88BB34E71CF699E500D47A1C /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripPlanningViewController.swift; sourceTree = "<group>"; };
+		88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,9 +227,11 @@
 			isa = PBXGroup;
 			children = (
 				884C8D921CE66E2600448E70 /* MasterViewController.swift */,
+				88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */,
 				88BB34E71CF699E500D47A1C /* LoadViewController.swift */,
 				884C8D941CE66E2600448E70 /* DetailViewController.swift */,
 				88BB34E61CF699CC00D47A1C /* Onboarding */,
+				88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -455,9 +461,11 @@
 				88BB34861CF4D77000D47A1C /* PhoneTextField.swift in Sources */,
 				884C8D931CE66E2600448E70 /* MasterViewController.swift in Sources */,
 				88BB34841CF4D74A00D47A1C /* ValidationViewController.swift in Sources */,
+				88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */,
 				884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */,
 				88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */,
 				88BB34801CF4B1BA00D47A1C /* AppearanceManager.swift in Sources */,
+				88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */,
 				88BB34E11CF6444100D47A1C /* Company.swift in Sources */,
 				88BB348E1CF4F8CE00D47A1C /* ThankYouViewController.swift in Sources */,
 			);

@@ -113,10 +113,6 @@ class LoadViewController : UIViewController {
     }
     
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     func addRightBarButton() {
         let button =  UIButton(type: .Custom)
         button.setImage(UIImage(named: "white_star"), forState: .Normal)
