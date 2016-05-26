@@ -223,8 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				884C8D921CE66E2600448E70 /* MasterViewController.swift */,
-				884C8D941CE66E2600448E70 /* DetailViewController.swift */,
 				88BB34E71CF699E500D47A1C /* LoadViewController.swift */,
+				884C8D941CE66E2600448E70 /* DetailViewController.swift */,
 				88BB34E61CF699CC00D47A1C /* Onboarding */,
 			);
 			name = ViewControllers;

@@ -14,14 +14,14 @@ class LoadViewController : UIViewController {
     
     let mapView = MKMapView()
     let topMapView = MKMapView()
-    let tableView = UITableView()
+    let tableView = UITableView(frame: CGRectZero, style: .Grouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
-        
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         self.title = "Greylock Importers"
+   
+        self.addRightBarButton()
         
         self.view.addSubview(mapView)
         self.addMap(mapView)
@@ -52,13 +52,14 @@ class LoadViewController : UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clearColor()
+        tableView.contentInset = UIEdgeInsetsMake(210, 0, 0, 0)
         tableView.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView)
         constrain(mapView, tableView) { mapView, tableView in
-            tableView.top    == mapView.bottom
+            tableView.top    == tableView.superview!.top + 64
             tableView.left   == tableView.superview!.left
             tableView.right  == tableView.superview!.right
-            tableView.bottom == tableView.superview!.bottom
+            tableView.bottom == tableView.superview!.bottom - 84
         }
         
         
@@ -72,7 +73,7 @@ class LoadViewController : UIViewController {
         bookNowLabel.textColor = .whiteColor()
         bookNowLabel.font = AppearanceManager.boldFont(20)
         bookNowButton.addSubview(bookNowLabel)
-        
+    
         let lineView = UIView()
         lineView.backgroundColor = .whiteColor()
         bookNowButton.addSubview(lineView)
@@ -116,10 +117,27 @@ class LoadViewController : UIViewController {
         super.viewDidAppear(animated)
     }
     
+    func addRightBarButton() {
+        let button =  UIButton(type: .Custom)
+        button.setImage(UIImage(named: "white_star"), forState: .Normal)
+        button.frame = CGRectMake(0, 0, 53, 31)
+        button.imageEdgeInsets = UIEdgeInsetsMake(-2, 30, 2, -30)
+        let label = UILabel(frame: CGRectMake(3, 5, 50, 20))
+        label.font = AppearanceManager.semiboldFont(19)
+        label.text = "4.0"
+        label.textAlignment = .Center
+        label.textColor = UIColor.whiteColor()
+        button.addSubview(label)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.addBlur()
         self.view.bringSubviewToFront(topMapView)
+        self.view.bringSubviewToFront(tableView)
+        tableView.contentOffset = CGPointMake(0, -210)
     }
     
     private func addBlur() {
