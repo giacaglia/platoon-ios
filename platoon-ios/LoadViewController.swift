@@ -49,12 +49,65 @@ class LoadViewController : UIViewController {
         
         tableView.registerClass(AnsweredCell.self, forCellReuseIdentifier: AnsweredCell.cellIdentifier())
         tableView.separatorStyle = .None
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .clearColor()
+        tableView.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView)
-        constrain(tableView) { tableView in
-            tableView.top    == tableView.superview!.top + 210
+        constrain(mapView, tableView) { mapView, tableView in
+            tableView.top    == mapView.bottom
             tableView.left   == tableView.superview!.left
             tableView.right  == tableView.superview!.right
             tableView.bottom == tableView.superview!.bottom
+        }
+        
+        
+        let bookNowButton = UIButton()
+        bookNowButton.backgroundColor = AppearanceManager.sharedInstance.peacockBlue
+        self.view.addSubview(bookNowButton)
+        
+        
+        let bookNowLabel = UILabel()
+        bookNowLabel.text = "Book Now"
+        bookNowLabel.textColor = .whiteColor()
+        bookNowLabel.font = AppearanceManager.boldFont(20)
+        bookNowButton.addSubview(bookNowLabel)
+        
+        let lineView = UIView()
+        lineView.backgroundColor = .whiteColor()
+        bookNowButton.addSubview(lineView)
+        
+        let totalPrice = UILabel()
+        totalPrice.text = "$200.00"
+        totalPrice.font = AppearanceManager.semiboldFont(20)
+        totalPrice.textColor = .whiteColor()
+        bookNowButton.addSubview(totalPrice)
+        
+        let priceMileLabel = UILabel()
+        priceMileLabel.text = "$1.60/mile"
+        priceMileLabel.textColor = .whiteColor()
+        priceMileLabel.font = AppearanceManager.semiboldFont(14)
+        bookNowButton.addSubview(priceMileLabel)
+        
+        constrain(bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel) { bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel in
+            bookNowButton.bottom == bookNowButton.superview!.bottom
+            bookNowButton.left   == bookNowButton.superview!.left
+            bookNowButton.right  == bookNowButton.superview!.right
+            bookNowButton.height == 84
+            
+            bookNowLabel.centerY == bookNowLabel.superview!.centerY
+            bookNowLabel.left    == bookNowLabel.superview!.left + 66
+            
+            lineView.centerY == lineView.superview!.centerY
+            lineView.left    == lineView.superview!.left + 194
+            lineView.width   == 2
+            lineView.height  == 25
+            
+            totalPrice.left == totalPrice.superview!.left + 214
+            totalPrice.top  == totalPrice.superview!.top + 23
+            
+            priceMileLabel.left == priceMileLabel.superview!.left + 214
+            priceMileLabel.top  == priceMileLabel.superview!.top + 48
         }
     }
     
@@ -86,15 +139,49 @@ class LoadViewController : UIViewController {
     }
 }
 
+extension LoadViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(AnsweredCell.cellIdentifier(), forIndexPath: indexPath) as! AnsweredCell
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return AnsweredCell.height()
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let detailsView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 36))
+        detailsView.backgroundColor = AppearanceManager.sharedInstance.peacockBlue
+        
+        let detailsLabel = UILabel(frame: CGRectMake(21, 7, self.view.frame.size.width - 21, 29))
+        detailsLabel.textAlignment = .Left
+        detailsLabel.textColor = .whiteColor()
+        detailsLabel.font = AppearanceManager.semiboldFont(20)
+        detailsLabel.text = "Details"
+        detailsView.addSubview(detailsLabel)
+        return detailsView
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
+}
+
 class AnsweredCell : UITableViewCell {
-    let titleLabel = UITextField()
+    let titleLabel    = UILabel()
+    let subtitleLabel = UILabel()
+    let iconImageView  = UIImageView()
     
     static func cellIdentifier() -> String {
         return "AnsweredCell"
     }
     
     static func height() -> CGFloat {
-        return 78.0
+        return 77.0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -109,14 +196,33 @@ class AnsweredCell : UITableViewCell {
     
     private func setup() {
         self.selectionStyle = .None
+       
         titleLabel.textAlignment = .Left
         titleLabel.font = AppearanceManager.semiboldFont(14)
+        titleLabel.textColor = AppearanceManager.sharedInstance.cerulean
+        titleLabel.text = "Pickup location"
         self.contentView.addSubview(titleLabel)
         
-        constrain(titleLabel) { titleLabel in
+        subtitleLabel.textAlignment = .Left
+        subtitleLabel.font = AppearanceManager.mediumFont(18)
+        subtitleLabel.textColor = AppearanceManager.sharedInstance.greyishBrown
+        subtitleLabel.text = "197 Kent St, Brookline, MA"
+        self.contentView.addSubview(subtitleLabel)
+        
+        iconImageView.image = UIImage(named: "icon_cargo")
+        self.contentView.addSubview(iconImageView)
+        
+        constrain(titleLabel, subtitleLabel, iconImageView) { titleLabel, subtitleLabel, iconImageView in
             titleLabel.left == titleLabel.superview!.left + 21
             titleLabel.top  == titleLabel.superview!.top + 15
+            
+            subtitleLabel.left == subtitleLabel.superview!.left + 21
+            subtitleLabel.top  == subtitleLabel.superview!.top + 41
+            
+            iconImageView.centerY == iconImageView.superview!.centerY
+            iconImageView.right   == iconImageView.superview!.right - 24
         }
+        
         
         let lineView = UIView()
         lineView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
