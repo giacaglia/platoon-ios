@@ -10,12 +10,13 @@ import UIKit
 import Cartography
 
 class MasterViewController: UITableViewController {
-
     var objects = [Load]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Loads"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
         self.navigationController?.navigationBar.tintColor = .whiteColor()
