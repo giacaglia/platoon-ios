@@ -44,23 +44,38 @@ class LoadHistoryViewController : UIViewController {
         monthLabel.textColor = .whiteColor()
         monthView.addSubview(monthLabel)
         
-        
         let leftArrow = UIButton()
         leftArrow.setImage(UIImage(named: "leftArrow"), forState: .Normal)
         leftArrow.addTarget(self, action: #selector(moveLeft), forControlEvents: .TouchUpInside)
         monthView.addSubview(leftArrow)
         
-        constrain(monthView, monthLabel) { monthView, monthLabel in
+        
+        let rightArrow = UIButton()
+        rightArrow.setImage(UIImage(named: "whiteRightArrow"), forState: .Normal)
+        rightArrow.addTarget(self, action: #selector(moveRight), forControlEvents: .TouchUpInside)
+        monthView.addSubview(rightArrow)
+        
+        constrain(monthView, monthLabel, leftArrow, rightArrow) { monthView, monthLabel, leftArrow, rightArrow in
             monthView.top    == monthView.superview!.top + 64
             monthView.left   == monthView.superview!.left
             monthView.right  == monthView.superview!.right
             monthView.height == 57
             
             monthLabel.center == monthLabel.superview!.center
+            
+            leftArrow.left    == leftArrow.superview!.left + 10
+            leftArrow.centerY == leftArrow.superview!.centerY
+            
+            rightArrow.right   == rightArrow.superview!.right - 10
+            rightArrow.centerY == rightArrow.superview!.centerY
         }
     }
     
     func moveLeft() {
+        
+    }
+    
+    func moveRight() {
         
     }
 }
