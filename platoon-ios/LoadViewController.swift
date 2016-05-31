@@ -11,7 +11,6 @@ import MapKit
 import Cartography
 
 class LoadViewController : UIViewController {
-    
     let mapView = MKMapView()
     let topMapView = MKMapView()
     let tableView = UITableView(frame: CGRectZero, style: .Grouped)

@@ -19,6 +19,7 @@
 		884EB2451CFDEFA500987CAD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB2441CFDEFA500987CAD /* User.swift */; };
 		884EB2481CFE0F0F00987CAD /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB2471CFE0F0F00987CAD /* BankViewController.swift */; };
 		884EB24A1CFE14AD00987CAD /* FleetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB2491CFE14AD00987CAD /* FleetViewController.swift */; };
+		884EB24C1CFE1C1A00987CAD /* FleetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB24B1CFE1C1A00987CAD /* FleetProfileViewController.swift */; };
 		88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */; };
 		88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB347A1CF4A78200D47A1C /* Cartography.framework */; };
 		88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB347A1CF4A78200D47A1C /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -110,6 +111,7 @@
 		884EB2441CFDEFA500987CAD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		884EB2471CFE0F0F00987CAD /* BankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		884EB2491CFE14AD00987CAD /* FleetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetViewController.swift; sourceTree = "<group>"; };
+		884EB24B1CFE1C1A00987CAD /* FleetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetProfileViewController.swift; sourceTree = "<group>"; };
 		88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		88BB347A1CF4A78200D47A1C /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				884EB2471CFE0F0F00987CAD /* BankViewController.swift */,
 				884EB2491CFE14AD00987CAD /* FleetViewController.swift */,
+				884EB24B1CFE1C1A00987CAD /* FleetProfileViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				88BB34821CF4CD1D00D47A1C /* CreateAccountViewController.swift in Sources */,
 				88BB34DD1CF6437C00D47A1C /* Load.swift in Sources */,
 				88BB34E81CF699E500D47A1C /* LoadViewController.swift in Sources */,
+				884EB24C1CFE1C1A00987CAD /* FleetProfileViewController.swift in Sources */,
 				884EB24A1CFE14AD00987CAD /* FleetViewController.swift in Sources */,
 				88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */,
 				884EB2481CFE0F0F00987CAD /* BankViewController.swift in Sources */,
