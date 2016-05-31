@@ -174,6 +174,7 @@ class ProfileViewController : UIViewController {
     }
 
     func didPressLoad() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(LoadHistoryViewController(), animated: true)
 
     }

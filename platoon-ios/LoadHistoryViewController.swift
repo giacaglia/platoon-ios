@@ -15,7 +15,7 @@ class LoadHistoryViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.title = "Load History"
-        
+
         self.addMonthSelecter()
         tableView.registerClass(LoadCell.self, forCellReuseIdentifier: LoadCell.cellIdentifier())
         tableView.separatorStyle = .None
@@ -48,7 +48,6 @@ class LoadHistoryViewController : UIViewController {
         leftArrow.setImage(UIImage(named: "leftArrow"), forState: .Normal)
         leftArrow.addTarget(self, action: #selector(moveLeft), forControlEvents: .TouchUpInside)
         monthView.addSubview(leftArrow)
-        
         
         let rightArrow = UIButton()
         rightArrow.setImage(UIImage(named: "whiteRightArrow"), forState: .Normal)
