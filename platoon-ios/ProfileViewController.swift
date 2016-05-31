@@ -174,7 +174,7 @@ class ProfileViewController : UIViewController {
     }
 
     func didPressLoad() {
-        self.navigationController?.pushViewController(BankViewController(), animated: true)
+        self.navigationController?.pushViewController(LoadHistoryViewController(), animated: true)
 
     }
 }
