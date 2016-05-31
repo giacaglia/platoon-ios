@@ -50,7 +50,7 @@ class MasterViewController: UITableViewController {
     }
     
     func showProfile() {
-        self.navigationController?.pushViewController(TripPlanningViewController(), animated: true)
+        self.navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
     
     func showCalendar() {
