@@ -16,7 +16,9 @@ class FleetViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.title = "Fleet Management"
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+
+        self.addRightButton()
         tableView.registerClass(FleetCell.self, forCellReuseIdentifier: FleetCell.cellIdentifier())
         tableView.separatorStyle = .None
         tableView.delegate = self
@@ -30,6 +32,19 @@ class FleetViewController : UIViewController {
             tableView.right  == tableView.superview!.right
             tableView.bottom == tableView.superview!.bottom
         }
+    }
+    
+    private func addRightButton() {
+        let button: UIButton = UIButton(type: .Custom)
+        button.setImage(UIImage(named: "plus"), forState: UIControlState.Normal)
+        button.frame = CGRectMake(0, 0, 30, 31)
+        button.addTarget(self, action: #selector(addDriver), forControlEvents: .TouchUpInside)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    func addDriver() {
+        self.navigationController?.pushViewController(AddDriverViewController(), animated: true)
     }
 }
 
