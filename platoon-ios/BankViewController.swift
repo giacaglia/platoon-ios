@@ -21,6 +21,7 @@ class BankViewController : UIViewController {
         
         self.addRightButton()
         tableView.registerClass(AnsweredCell.self, forCellReuseIdentifier: AnsweredCell.cellIdentifier())
+        tableView.registerClass(NameTableViewCell.self, forCellReuseIdentifier: NameTableViewCell.cellIdentifier())
         tableView.separatorStyle = .None
         tableView.delegate = self
         tableView.dataSource = self
@@ -46,7 +47,8 @@ class BankViewController : UIViewController {
     }
 
     func editBankInfo() {
-        
+        editing = true
+        self.tableView.reloadData()
     }
 }
 
@@ -57,12 +59,19 @@ extension BankViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(AnsweredCell.cellIdentifier(), forIndexPath: indexPath) as! AnsweredCell
-        
-        cell.titleLabel.text = titleQuestions[indexPath.row]
-        cell.subtitleLabel.text = subtitleQuestions[indexPath.row]
-        cell.iconImageView.hidden = true
-        return cell
+        if self.editing {
+            let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
+            cell.textField.placeholder = titleQuestions[indexPath.row]
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(AnsweredCell.cellIdentifier(), forIndexPath: indexPath) as! AnsweredCell
+            cell.titleLabel.text = titleQuestions[indexPath.row]
+            cell.subtitleLabel.text = subtitleQuestions[indexPath.row]
+            cell.iconImageView.hidden = true
+            return cell
+        }
+   
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
