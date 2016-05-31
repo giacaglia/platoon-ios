@@ -112,6 +112,7 @@ class LoadViewController : UIViewController {
         }
     }
     
+
     
     func addRightBarButton() {
         let button =  UIButton(type: .Custom)

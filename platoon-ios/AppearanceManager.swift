@@ -19,8 +19,9 @@ class AppearanceManager {
     let backgroundColor = UIColor(white: 250/255.0, alpha: 1.0)
     let gunmetal = UIColor(red: 86.0 / 255.0, green: 95.0 / 255.0, blue: 101.0 / 255.0, alpha: 1.0)
     let greyishBrown = UIColor(white: 83.0 / 255.0, alpha: 1.0)
+    let greyishBrownTwo = UIColor(white: 74.0 / 255.0, alpha: 1.0)
     let battleshipGrey = UIColor(red: 105.0 / 255.0, green: 114.0 / 255.0, blue: 120.0 / 255.0, alpha: 1.0)
-
+    let azure = UIColor(red: 0.0, green: 178.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
     
     static func regularFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik", size: size)!
@@ -44,5 +45,9 @@ class AppearanceManager {
     
     static func lightFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik-Light", size: size)!
+    }
+    
+    static func extraLightFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "Graphik-Extralight", size: size)!
     }
 }
