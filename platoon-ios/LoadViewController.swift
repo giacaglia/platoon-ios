@@ -14,7 +14,9 @@ class LoadViewController : UIViewController {
     let mapView = MKMapView()
     let topMapView = MKMapView()
     let tableView = UITableView(frame: CGRectZero, style: .Grouped)
-    
+    let questionTitles = ["Pickup Location", "Dropoff Location", "Pickup Time", "Weight", "Description of Pallets", "Reference #"]
+    let questionAnswers = ["197 Kent St, Brookline, MA", "750 Atlantic Ave, Boston, MA", "10:50 am", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
+    let imageNames = ["detailLocation", "detailLocation", "detailClock", "detailScale", "detailPallet", "detailScale"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
@@ -34,7 +36,6 @@ class LoadViewController : UIViewController {
         
         self.view.addSubview(topMapView)
         self.addMap(topMapView)
-        
         
         topMapView.layer.cornerRadius = 92
         topMapView.layer.borderColor = AppearanceManager.sharedInstance.cerulean.CGColor
@@ -61,11 +62,9 @@ class LoadViewController : UIViewController {
             tableView.bottom == tableView.superview!.bottom - 84
         }
         
-        
         let bookNowButton = UIButton()
         bookNowButton.backgroundColor = AppearanceManager.sharedInstance.peacockBlue
         self.view.addSubview(bookNowButton)
-        
         
         let bookNowLabel = UILabel()
         bookNowLabel.text = "Book Now"
@@ -110,7 +109,6 @@ class LoadViewController : UIViewController {
             priceMileLabel.top  == priceMileLabel.superview!.top + 48
         }
     }
-    
 
     
     func addRightBarButton() {
@@ -147,19 +145,27 @@ class LoadViewController : UIViewController {
     private func addMap(mapView:MKMapView) {
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
         let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 }
 
 extension LoadViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return questionTitles.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(AnsweredCell.cellIdentifier(), forIndexPath: indexPath) as! AnsweredCell
+        cell.titleLabel.text = questionTitles[indexPath.row]
+        cell.subtitleLabel.text = questionAnswers[indexPath.row]
+        cell.iconImageView.image = UIImage(named: imageNames[indexPath.row])
+        if indexPath.row == questionTitles.count - 1 {
+            cell.iconImageView.hidden = true
+        }
+        else {
+            cell.iconImageView.hidden = false
+        }
         return cell
     }
     

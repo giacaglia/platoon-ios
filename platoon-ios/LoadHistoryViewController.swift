@@ -32,6 +32,12 @@ class LoadHistoryViewController : UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        tableView.contentOffset = CGPointMake(0, 0)
+    }
+    
     private func addMonthSelecter() {
         let monthView = UIView()
         monthView.backgroundColor = AppearanceManager.sharedInstance.peacockBlue

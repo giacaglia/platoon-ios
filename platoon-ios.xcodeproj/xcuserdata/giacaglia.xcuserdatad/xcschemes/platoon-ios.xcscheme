@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "884C8D8C1CE66E2500448E70"
-               BuildableName = "platoon-ios.app"
-               BlueprintName = "platoon-ios"
+               BuildableName = "platoon.app"
+               BlueprintName = "platoon"
                ReferencedContainer = "container:platoon-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "884C8D8C1CE66E2500448E70"
-            BuildableName = "platoon-ios.app"
-            BlueprintName = "platoon-ios"
+            BuildableName = "platoon.app"
+            BlueprintName = "platoon"
             ReferencedContainer = "container:platoon-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "884C8D8C1CE66E2500448E70"
-            BuildableName = "platoon-ios.app"
-            BlueprintName = "platoon-ios"
+            BuildableName = "platoon.app"
+            BlueprintName = "platoon"
             ReferencedContainer = "container:platoon-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "884C8D8C1CE66E2500448E70"
-            BuildableName = "platoon-ios.app"
-            BlueprintName = "platoon-ios"
+            BuildableName = "platoon.app"
+            BlueprintName = "platoon"
             ReferencedContainer = "container:platoon-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
