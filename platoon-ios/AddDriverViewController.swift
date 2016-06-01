@@ -22,12 +22,22 @@ class AddDriverViewController : UITableViewController {
     }
     
     private func addRightButton() {
-        let button: UIButton = UIButton(type: .Custom)
-        button.setTitle("Done", forState: .Normal)
-        button.titleLabel!.font = AppearanceManager.semiboldFont(17)
-        button.frame = CGRectMake(0, 0, 45, 31)
-        let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItem = barButton
+        let doneButton = UIButton(type: .Custom)
+        doneButton.setTitle("Done", forState: .Normal)
+        doneButton.titleLabel!.font = AppearanceManager.semiboldFont(17)
+        doneButton.addTarget(self, action: #selector(didPressDone), forControlEvents: .TouchUpInside)
+        doneButton.frame = CGRectMake(0, 0, 45, 30)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: doneButton)
+    }
+    
+    func didPressDone() {
+        let user = User()
+        user.first_name = "Giuliano"
+        user.last_name = "Giacaglia"
+        user.phone_number = "(617) 981-3206"
+        user.truck_type = "Volvo"
+        user.plate_number = "MARS17"
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 

@@ -63,6 +63,7 @@ extension FleetViewController : UITableViewDataSource, UITableViewDelegate {
         return AnsweredCell.height()
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(FleetProfileViewController(), animated: true)
     }
 }

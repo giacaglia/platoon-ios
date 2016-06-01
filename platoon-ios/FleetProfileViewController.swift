@@ -12,22 +12,19 @@ import MapKit
 
 class FleetProfileViewController : UIViewController {
     let mapView = MKMapView()
-    let tableView = UITableView(frame: CGRectZero, style: .Grouped)
+    let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.title = "Elon Musk"
-        
         self.addRightButton()
         
-        
-        self.view.addSubview(mapView)
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
         let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+        self.view.addSubview(mapView)
         constrain(mapView) { mapView in
             mapView.top    == mapView.superview!.top
             mapView.left   == mapView.superview!.left
@@ -50,10 +47,20 @@ class FleetProfileViewController : UIViewController {
         }
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPointMake(0, 0)
+    }
     private func addRightButton() {
         let button: UIButton = UIButton(type: .Custom)
         button.setImage(UIImage(named: "elon"), forState: UIControlState.Normal)
-        button.frame = CGRectMake(0, 0, 30, 31)
+        button.imageView?.contentMode = .ScaleAspectFit
+        button.imageView?.layer.borderColor = UIColor.whiteColor().CGColor
+        button.imageView?.layer.borderWidth = 2.0
+        button.imageView?.layer.cornerRadius = 17
+        button.frame = CGRectMake(0, 0, 35, 35)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
     }

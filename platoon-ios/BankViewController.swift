@@ -19,7 +19,7 @@ class BankViewController : UIViewController {
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.title = "Bank Information"
         
-        self.addRightButton()
+        self.setRightButtonEdit()
         tableView.registerClass(AnsweredCell.self, forCellReuseIdentifier: AnsweredCell.cellIdentifier())
         tableView.registerClass(NameTableViewCell.self, forCellReuseIdentifier: NameTableViewCell.cellIdentifier())
         tableView.separatorStyle = .None
@@ -36,20 +36,43 @@ class BankViewController : UIViewController {
         }
     }
     
-    private func addRightButton() {
+    private func setRightButtonEdit() {
         let button: UIButton = UIButton(type: .Custom)
         button.setTitle("Edit", forState: .Normal)
         button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        button.frame = CGRectMake(0, 0, 35, 31)
+        button.frame = CGRectMake(0, 0, 35, 30)
         button.addTarget(self, action: #selector(editBankInfo), forControlEvents: .TouchUpInside)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    private func setRightButtonDone() {
+        let button: UIButton = UIButton(type: .Custom)
+        button.setTitle("Done", forState: .Normal)
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.frame = CGRectMake(0, 0, 45, 30)
+        button.addTarget(self, action: #selector(didPressDone), forControlEvents: .TouchUpInside)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
     }
 
     
     func editBankInfo() {
-        editing = true
-        self.tableView.reloadData()
+        if !editing {
+            editing = true
+            self.tableView.reloadData()
+            self.setRightButtonDone()
+            let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! NameTableViewCell
+            cell.textField.becomeFirstResponder()
+        }
+    }
+    
+    func didPressDone() {
+        if editing {
+            editing = false
+            self.tableView.reloadData()
+            self.setRightButtonEdit()
+        }
     }
 }
 
@@ -63,6 +86,7 @@ extension BankViewController : UITableViewDelegate, UITableViewDataSource {
         if self.editing {
             let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
             cell.textField.placeholder = titleQuestions[indexPath.row]
+            cell.textField.text = subtitleQuestions[indexPath.row]
             return cell
         }
         else {
@@ -72,7 +96,13 @@ extension BankViewController : UITableViewDelegate, UITableViewDataSource {
             cell.iconImageView.hidden = true
             return cell
         }
-   
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("index path row: ", indexPath.row)
+        let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
+        cell.textField.userInteractionEnabled = true
+        cell.textField.becomeFirstResponder()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
