@@ -118,6 +118,8 @@ class ProfileViewController : UIViewController {
         bankButton.layer.masksToBounds = true
         bankButton.setTitle("Bank Information", forState: .Normal)
         bankButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        bankButton.setImage(UIImage(named: "dollar"), forState: .Normal)
+        bankButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20.0, 0, 0)
         bankButton.titleLabel!.font = AppearanceManager.mediumFont(20)
         bankButton.addTarget(self, action: #selector(didPressBank), forControlEvents: .TouchUpInside)
         self.view.addSubview(bankButton)
@@ -130,6 +132,8 @@ class ProfileViewController : UIViewController {
         fleetButton.layer.masksToBounds = true
         fleetButton.setTitle("Fleet Management", forState: .Normal)
         fleetButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        fleetButton.setImage(UIImage(named: "people"), forState: .Normal)
+        fleetButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20.0, 0, 0)
         fleetButton.titleLabel!.font = AppearanceManager.mediumFont(20)
         fleetButton.addTarget(self, action: #selector(didPressFleet), forControlEvents: .TouchUpInside)
         self.view.addSubview(fleetButton)
@@ -142,6 +146,8 @@ class ProfileViewController : UIViewController {
         loadButton.layer.masksToBounds = true
         loadButton.setTitle("Load History", forState: .Normal)
         loadButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        loadButton.setImage(UIImage(named: "loadTruck"), forState: .Normal)
+        loadButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20.0, 0, 0)
         loadButton.titleLabel!.font = AppearanceManager.mediumFont(20)
         loadButton.addTarget(self, action: #selector(didPressLoad), forControlEvents: .TouchUpInside)
         self.view.addSubview(loadButton)
