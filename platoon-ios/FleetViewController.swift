@@ -109,7 +109,7 @@ class FleetCell : UITableViewCell {
         self.contentView.addSubview(fullNameLabel)
         
         truckLabel.text = "Volvo - VB1467"
-        truckLabel.textColor = UIColor(red: 120/255.0, green: 120/255.0, blue: 115/255.0, alpha: 1.0)
+        truckLabel.textColor = AppearanceManager.sharedInstance.mediumGrey
         truckLabel.textAlignment = .Left
         truckLabel.font = AppearanceManager.mediumFont(18)
         self.contentView.addSubview(truckLabel)

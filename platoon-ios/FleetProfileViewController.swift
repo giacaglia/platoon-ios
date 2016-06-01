@@ -97,5 +97,11 @@ extension FleetProfileViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= 0 {
+            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, 0)
+        }
+    }
 
 }

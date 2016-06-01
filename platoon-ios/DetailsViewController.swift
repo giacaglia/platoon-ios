@@ -98,10 +98,12 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
 
 
 class NameTableViewCell : UITableViewCell {
-    enum CellType { case Text, LastCellText, PhoneCell }
+    enum CellType { case Text, LastCellText, PhoneCell, PhotoCell }
     
     let textField      = UITextField()
     let phoneTextField = PhoneTextField()
+    let plusImageView  = UIImageView()
+    let addDriverLabel = UILabel()
     var cellType : CellType = .Text {
         didSet {
             switch cellType {
@@ -109,13 +111,24 @@ class NameTableViewCell : UITableViewCell {
                 self.textField.hidden        = false
                 self.phoneTextField.hidden   = true
                 self.textField.returnKeyType = .Next
+                self.plusImageView.hidden    = true
+                self.addDriverLabel.hidden   = true
             case .LastCellText:
                 self.textField.hidden        = false
                 self.phoneTextField.hidden   = true
                 self.textField.returnKeyType = .Done
+                self.plusImageView.hidden    = true
+                self.addDriverLabel.hidden   = true
             case .PhoneCell:
                 self.textField.hidden        = true
                 self.phoneTextField.hidden   = false
+                self.plusImageView.hidden    = true
+                self.addDriverLabel.hidden   = true
+            case .PhotoCell:
+                self.textField.hidden        = true
+                self.phoneTextField.hidden   = true
+                self.plusImageView.hidden    = false
+                self.addDriverLabel.hidden   = false
             }
         }
     }
@@ -150,7 +163,6 @@ class NameTableViewCell : UITableViewCell {
             textField.width   == textField.superview!.width - 42
         }
         
-        
         phoneTextField.autocorrectionType = .No
         phoneTextField.font = AppearanceManager.mediumFont(18)
         phoneTextField.hidden = true
@@ -170,6 +182,27 @@ class NameTableViewCell : UITableViewCell {
             lineView.bottom  == lineView.superview!.bottom
             lineView.height == 1
         }
+        
+        plusImageView.image = UIImage(named: "add")
+        plusImageView.contentMode = .ScaleAspectFill
+        plusImageView.hidden = true
+        self.contentView.addSubview(plusImageView)
+        
+        addDriverLabel.text = "Add Driver"
+        addDriverLabel.font = AppearanceManager.mediumFont(18)
+        addDriverLabel.textAlignment = .Left
+        addDriverLabel.textColor = AppearanceManager.sharedInstance.mediumGrey
+        addDriverLabel.hidden = true
+        self.contentView.addSubview(addDriverLabel)
+        
+        constrain(plusImageView, addDriverLabel) { plusImageView, addDriverLabel in
+            plusImageView.left    == plusImageView.superview!.left + 20
+            plusImageView.centerY == plusImageView.superview!.centerY
+            
+            addDriverLabel.left    == addDriverLabel.superview!.left + 80
+            addDriverLabel.centerY == addDriverLabel.superview!.centerY
+        }
+
     }
     
     func setQuestion(placeholderText: String) {

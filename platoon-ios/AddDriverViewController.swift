@@ -9,7 +9,7 @@
 import UIKit
 import Cartography
 class AddDriverViewController : UITableViewController {
-    let arrayQuestions = ["First Name", "Last Name", "Phone Number", "Truck Type", "Plate Number"]
+    let arrayQuestions = ["First Name", "Last Name", "Phone Number", "Truck Type", "Plate Number", "Add Photo"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +57,22 @@ extension AddDriverViewController {
         if question == "Phone Number" {
             cell.cellType = .PhoneCell
         }
+        else if question == "Add Photo" {
+            cell.cellType = .PhotoCell
+        }
         else {
             cell.cellType = .Text
         }
+
         cell.setQuestion(question)
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
+        if cell.cellType == .PhotoCell {
+            print("Photo")
+        }
+
     }
 }

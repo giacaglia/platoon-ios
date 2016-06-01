@@ -189,6 +189,12 @@ extension LoadViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= -210 {
+            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -210)
+        }
+    }
 }
 
 class AnsweredCell : UITableViewCell {

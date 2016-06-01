@@ -36,6 +36,7 @@ class LoadHistoryViewController : UIViewController {
         super.viewDidLayoutSubviews()
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         tableView.contentOffset = CGPointMake(0, 0)
+//        tableView.content
     }
     
     private func addMonthSelecter() {
