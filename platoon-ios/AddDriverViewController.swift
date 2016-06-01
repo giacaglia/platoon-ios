@@ -24,6 +24,7 @@ class AddDriverViewController : UITableViewController {
     private func addRightButton() {
         let button: UIButton = UIButton(type: .Custom)
         button.setTitle("Done", forState: .Normal)
+        button.titleLabel!.font = AppearanceManager.semiboldFont(17)
         button.frame = CGRectMake(0, 0, 45, 31)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
@@ -42,7 +43,14 @@ extension AddDriverViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(NameTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! NameTableViewCell
-        cell.setQuestion(arrayQuestions[indexPath.row])
+        let question = arrayQuestions[indexPath.row]
+        if question == "Phone Number" {
+            cell.cellType = .PhoneCell
+        }
+        else {
+            cell.cellType = .Text
+        }
+        cell.setQuestion(question)
         return cell
     }
 }

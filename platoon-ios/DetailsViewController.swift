@@ -98,7 +98,27 @@ extension DetailsViewController : UITableViewDataSource, UITableViewDelegate {
 
 
 class NameTableViewCell : UITableViewCell {
-    let textField = UITextField()
+    enum CellType { case Text, LastCellText, PhoneCell }
+    
+    let textField      = UITextField()
+    let phoneTextField = PhoneTextField()
+    var cellType : CellType = .Text {
+        didSet {
+            switch cellType {
+            case .Text:
+                self.textField.hidden        = false
+                self.phoneTextField.hidden   = true
+                self.textField.returnKeyType = .Next
+            case .LastCellText:
+                self.textField.hidden        = false
+                self.phoneTextField.hidden   = true
+                self.textField.returnKeyType = .Done
+            case .PhoneCell:
+                self.textField.hidden        = true
+                self.phoneTextField.hidden   = false
+            }
+        }
+    }
     
     static func cellIdentifier() -> String {
         return "NameTableViewCell"
@@ -130,6 +150,17 @@ class NameTableViewCell : UITableViewCell {
             textField.width   == textField.superview!.width - 42
         }
         
+        
+        phoneTextField.autocorrectionType = .No
+        phoneTextField.font = AppearanceManager.mediumFont(18)
+        phoneTextField.hidden = true
+        self.contentView.addSubview(phoneTextField)
+        constrain(phoneTextField) { phoneTextField in
+            phoneTextField.left    == phoneTextField.superview!.left + 21
+            phoneTextField.centerY == phoneTextField.superview!.centerY
+            phoneTextField.width   == phoneTextField.superview!.width - 42
+        }
+        
         let lineView = UIView()
         lineView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.contentView.addSubview(lineView)
@@ -139,11 +170,12 @@ class NameTableViewCell : UITableViewCell {
             lineView.bottom  == lineView.superview!.bottom
             lineView.height == 1
         }
-        
     }
     
     func setQuestion(placeholderText: String) {
         textField.attributedPlaceholder = NSAttributedString(string:placeholderText,
+                                                                  attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
+        phoneTextField.attributedPlaceholder = NSAttributedString(string:placeholderText,
                                                                   attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
     }
 }

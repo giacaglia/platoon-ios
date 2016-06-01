@@ -46,6 +46,7 @@ class BankViewController : UIViewController {
         self.navigationItem.rightBarButtonItem = barButton
     }
 
+    
     func editBankInfo() {
         editing = true
         self.tableView.reloadData()

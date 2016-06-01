@@ -166,16 +166,17 @@ class ProfileViewController : UIViewController {
     
 
     func didPressBank() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(BankViewController(), animated: true)
     }
     
     func didPressFleet() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(FleetViewController(), animated: true)
     }
 
     func didPressLoad() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(LoadHistoryViewController(), animated: true)
-
     }
 }

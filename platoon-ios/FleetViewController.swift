@@ -44,6 +44,7 @@ class FleetViewController : UIViewController {
     }
     
     func addDriver() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(AddDriverViewController(), animated: true)
     }
 }
