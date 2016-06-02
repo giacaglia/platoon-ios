@@ -1,2 +1,3 @@
 github "robb/Cartography" # Cartography
 github "realm/realm-cocoa" # Realm database
+github "danielgindi/Charts" ~> 2.2.5 # Charts Library

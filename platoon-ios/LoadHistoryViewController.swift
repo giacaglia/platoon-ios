@@ -8,6 +8,8 @@
 
 import UIKit
 import Cartography
+import Charts
+
 
 class LoadHistoryViewController : UIViewController {
     let tableView = UITableView(frame: CGRectZero, style: .Grouped)

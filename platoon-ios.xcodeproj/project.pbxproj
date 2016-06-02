@@ -22,6 +22,8 @@
 		884EB24C1CFE1C1A00987CAD /* FleetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB24B1CFE1C1A00987CAD /* FleetProfileViewController.swift */; };
 		884EB24E1CFE219900987CAD /* AddDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB24D1CFE219900987CAD /* AddDriverViewController.swift */; };
 		884EB2501CFE24B400987CAD /* LoadHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884EB24F1CFE24B400987CAD /* LoadHistoryViewController.swift */; };
+		88BA84E01D0089D500C72AA8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BA84DF1D0089D500C72AA8 /* Charts.framework */; };
+		88BA84E21D0089DA00C72AA8 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BA84DF1D0089D500C72AA8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */; };
 		88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB347A1CF4A78200D47A1C /* Cartography.framework */; };
 		88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB347A1CF4A78200D47A1C /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,7 +57,6 @@
 		88BB34DD1CF6437C00D47A1C /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34DC1CF6437C00D47A1C /* Load.swift */; };
 		88BB34E11CF6444100D47A1C /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E01CF6444100D47A1C /* Company.swift */; };
 		88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; };
-		88BB34E41CF647CD00D47A1C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; };
 		88BB34E51CF647CD00D47A1C /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88BB34E21CF647C900D47A1C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88BB34E81CF699E500D47A1C /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E71CF699E500D47A1C /* LoadViewController.swift */; };
 		88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */; };
@@ -87,6 +88,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				88BB34DB1CF63A8100D47A1C /* Realm.framework in CopyFiles */,
+				88BA84E21D0089DA00C72AA8 /* Charts.framework in CopyFiles */,
 				88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */,
 				88BB34E51CF647CD00D47A1C /* RealmSwift.framework in CopyFiles */,
 			);
@@ -116,6 +118,7 @@
 		884EB24B1CFE1C1A00987CAD /* FleetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleetProfileViewController.swift; sourceTree = "<group>"; };
 		884EB24D1CFE219900987CAD /* AddDriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDriverViewController.swift; sourceTree = "<group>"; };
 		884EB24F1CFE24B400987CAD /* LoadHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadHistoryViewController.swift; sourceTree = "<group>"; };
+		88BA84DF1D0089D500C72AA8 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		88BB34781CF49EB300D47A1C /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		88BB347A1CF4A78200D47A1C /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
@@ -157,9 +160,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BA84E01D0089D500C72AA8 /* Charts.framework in Frameworks */,
 				88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */,
 				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
-				88BB34E41CF647CD00D47A1C /* RealmSwift.framework in Frameworks */,
 				88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +270,7 @@
 		88BB347C1CF4A79D00D47A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88BA84DF1D0089D500C72AA8 /* Charts.framework */,
 				88BB34E21CF647C900D47A1C /* RealmSwift.framework */,
 				88BB34D81CF63A7A00D47A1C /* Realm.framework */,
 				88BB347A1CF4A78200D47A1C /* Cartography.framework */,
