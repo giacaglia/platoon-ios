@@ -103,7 +103,7 @@ class NameTableViewCell : UITableViewCell {
     let textField      = UITextField()
     let phoneTextField = PhoneTextField()
     let plusImageView  = UIImageView()
-    let addDriverLabel = UILabel()
+    let addPhotoLabel = UILabel()
     var cellType : CellType = .Text {
         didSet {
             switch cellType {
@@ -112,23 +112,23 @@ class NameTableViewCell : UITableViewCell {
                 self.phoneTextField.hidden   = true
                 self.textField.returnKeyType = .Next
                 self.plusImageView.hidden    = true
-                self.addDriverLabel.hidden   = true
+                self.addPhotoLabel.hidden   = true
             case .LastCellText:
                 self.textField.hidden        = false
                 self.phoneTextField.hidden   = true
                 self.textField.returnKeyType = .Done
                 self.plusImageView.hidden    = true
-                self.addDriverLabel.hidden   = true
+                self.addPhotoLabel.hidden   = true
             case .PhoneCell:
                 self.textField.hidden        = true
                 self.phoneTextField.hidden   = false
                 self.plusImageView.hidden    = true
-                self.addDriverLabel.hidden   = true
+                self.addPhotoLabel.hidden   = true
             case .PhotoCell:
                 self.textField.hidden        = true
                 self.phoneTextField.hidden   = true
                 self.plusImageView.hidden    = false
-                self.addDriverLabel.hidden   = false
+                self.addPhotoLabel.hidden   = false
             }
         }
     }
@@ -188,14 +188,14 @@ class NameTableViewCell : UITableViewCell {
         plusImageView.hidden = true
         self.contentView.addSubview(plusImageView)
         
-        addDriverLabel.text = "Add Driver"
-        addDriverLabel.font = AppearanceManager.mediumFont(18)
-        addDriverLabel.textAlignment = .Left
-        addDriverLabel.textColor = AppearanceManager.sharedInstance.mediumGrey
-        addDriverLabel.hidden = true
-        self.contentView.addSubview(addDriverLabel)
+        addPhotoLabel.text = "Add Photo"
+        addPhotoLabel.font = AppearanceManager.mediumFont(18)
+        addPhotoLabel.textAlignment = .Left
+        addPhotoLabel.textColor = AppearanceManager.sharedInstance.mediumGrey
+        addPhotoLabel.hidden = true
+        self.contentView.addSubview(addPhotoLabel)
         
-        constrain(plusImageView, addDriverLabel) { plusImageView, addDriverLabel in
+        constrain(plusImageView, addPhotoLabel) { plusImageView, addDriverLabel in
             plusImageView.left    == plusImageView.superview!.left + 20
             plusImageView.centerY == plusImageView.superview!.centerY
             

@@ -180,15 +180,18 @@ class LoadCell : UITableViewCell {
         
         
         totalPriceLabel.textAlignment = .Right
-        totalPriceLabel.font = AppearanceManager.semiboldFont(20)
         totalPriceLabel.textColor = AppearanceManager.sharedInstance.battleshipGrey
-        totalPriceLabel.text = "$200.00"
+        let myMutableString = NSMutableAttributedString(string: "$200.00", attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(20)])
+        myMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(20), range: NSRange(location:0,length:1))
+        totalPriceLabel.attributedText = myMutableString
         self.contentView.addSubview(totalPriceLabel)
         
         priceMileLabel.textAlignment = .Right
-        priceMileLabel.font = AppearanceManager.regularFont(14)
         priceMileLabel.textColor = AppearanceManager.sharedInstance.battleshipGrey
-        priceMileLabel.text = "$1.60/mile"
+        let mileMutableString = NSMutableAttributedString(string: "$1.60/mile", attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(14)])
+        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
+        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
+        priceMileLabel.attributedText = mileMutableString
         self.contentView.addSubview(priceMileLabel)
         
         constrain(totalPriceLabel, priceMileLabel) { totalPriceLabel, priceMileLabel in

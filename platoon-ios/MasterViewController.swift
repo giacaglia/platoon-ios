@@ -69,7 +69,7 @@ extension MasterViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
-        
+
 //        let object = objects[indexPath.row]
 //        cell.setLoad(object)
         return cell

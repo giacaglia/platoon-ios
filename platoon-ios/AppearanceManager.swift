@@ -24,7 +24,7 @@ class AppearanceManager {
     let azure = UIColor(red: 0.0, green: 178.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
     let darkGrey = UIColor(red: 50.0 / 255.0, green: 55.0 / 255.0, blue: 55.0 / 255.0, alpha: 1.0)
     let mediumGrey = UIColor(red: 120.0 / 255.0, green: 120.0 / 255.0, blue: 115.0 / 255.0, alpha: 1.0)
-    
+    let brownishGrey = UIColor(red: 104.0 / 255.0, green: 101.0 / 255.0, blue: 101.0 / 255.0, alpha: 1.0)
     static func regularFont(size: CGFloat) -> UIFont {
         return UIFont(name: "Graphik", size: size)!
     }

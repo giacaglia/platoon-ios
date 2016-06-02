@@ -77,15 +77,18 @@ class LoadViewController : UIViewController {
         bookNowButton.addSubview(lineView)
         
         let totalPrice = UILabel()
-        totalPrice.text = "$200.00"
-        totalPrice.font = AppearanceManager.semiboldFont(20)
+        let myMutableString = NSMutableAttributedString(string: "$200.00", attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(20)])
+        myMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(20), range: NSRange(location:0,length:1))
+        totalPrice.attributedText = myMutableString
         totalPrice.textColor = .whiteColor()
         bookNowButton.addSubview(totalPrice)
         
         let priceMileLabel = UILabel()
-        priceMileLabel.text = "$1.60/mile"
         priceMileLabel.textColor = .whiteColor()
-        priceMileLabel.font = AppearanceManager.semiboldFont(14)
+        let mileMutableString = NSMutableAttributedString(string: "$1.60/mile", attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(14)])
+        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
+        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
+        priceMileLabel.attributedText = mileMutableString
         bookNowButton.addSubview(priceMileLabel)
         
         constrain(bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel) { bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel in

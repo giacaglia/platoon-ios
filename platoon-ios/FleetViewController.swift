@@ -56,6 +56,12 @@ extension FleetViewController : UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(FleetCell.cellIdentifier(), forIndexPath: indexPath) as! FleetCell
+        if indexPath.row == 0 {
+            cell.imgView.image = UIImage(named: "esmeralda")
+        }
+        else {
+            cell.imgView.image = UIImage(named: "elon")
+        }
         return cell
     }
     
@@ -70,10 +76,37 @@ extension FleetViewController : UITableViewDataSource, UITableViewDelegate {
 
 
 class FleetCell : UITableViewCell {
-    let imgView = UIImageView()
-    let fullNameLabel = UILabel()
-    let truckLabel = UILabel()
+    let imgView           = UIImageView()
+    let fullNameLabel     = UILabel()
+    let truckLabel        = UILabel()
     let rightArrowImgView = UIImageView()
+    let addImageView      = UIImageView()
+    let addDriverLabel    = UILabel()
+
+    enum FleetCellType {
+        case AddFleetCell, PhotoFleetCell
+    }
+    
+    var cellType : FleetCellType = .PhotoFleetCell {
+        didSet {
+            if cellType == .PhotoFleetCell {
+                self.imgView.hidden           = false
+                self.fullNameLabel.hidden     = false
+                self.truckLabel.hidden        = false
+                self.rightArrowImgView.hidden = false
+                self.addImageView.hidden      = true
+                self.addDriverLabel.hidden    = true
+            }
+            else if cellType == .AddFleetCell {
+                self.imgView.hidden           = true
+                self.fullNameLabel.hidden     = true
+                self.truckLabel.hidden        = true
+                self.rightArrowImgView.hidden = true
+                self.addImageView.hidden      = false
+                self.addDriverLabel.hidden    = false
+            }
+        }
+    }
     
     static func cellIdentifier() -> String {
         return "FleetCell"
@@ -141,5 +174,27 @@ class FleetCell : UITableViewCell {
             lineView.left   == lineView.superview!.left
             lineView.right  == lineView.superview!.right
         }
+        
+        addImageView.image = UIImage(named: "add")
+        addImageView.hidden = true
+        addImageView.contentMode = .ScaleAspectFit
+        self.contentView.addSubview(addImageView)
+        
+        addDriverLabel.text = "Add Driver"
+        addDriverLabel.font = AppearanceManager.mediumFont(18)
+        addDriverLabel.textAlignment = .Left
+        addDriverLabel.textColor = AppearanceManager.sharedInstance.mediumGrey
+        addDriverLabel.hidden = true
+        self.contentView.addSubview(addDriverLabel)
+        
+        constrain(addImageView, addDriverLabel) { addImageView, addDriverLabel in
+            addImageView.left    == addImageView.superview!.left + 20
+            addImageView.centerY == addImageView.superview!.centerY
+            
+            addDriverLabel.left    == addDriverLabel.superview!.left + 78
+            addDriverLabel.centerY == addDriverLabel.superview!.centerY
+        }
+        
+        
     }
 }
