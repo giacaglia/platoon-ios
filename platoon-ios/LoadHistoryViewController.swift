@@ -18,7 +18,7 @@ class LoadHistoryViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.title = "Load History"
-
+        
         self.addMonthSelecter()
         self.addSummary()
         self.addSummaryLineChart()
@@ -31,17 +31,11 @@ class LoadHistoryViewController : UIViewController {
         tableView.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView)
         constrain(tableView) { tableView in
-            tableView.top    == tableView.superview!.top + 64 + 240
+            tableView.top    == tableView.superview!.top + 64 + 270
             tableView.left   == tableView.superview!.left
             tableView.right  == tableView.superview!.right
             tableView.bottom == tableView.superview!.bottom
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        tableView.contentOffset = CGPointMake(0, 0)
     }
     
     private func addMonthSelecter() {
@@ -89,8 +83,6 @@ class LoadHistoryViewController : UIViewController {
     func moveRight() {
         
     }
-    
-
 }
 
 
