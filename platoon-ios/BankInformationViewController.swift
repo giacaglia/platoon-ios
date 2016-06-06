@@ -35,10 +35,6 @@ class BankInformationViewController : UIViewController {
         self.addRightBarButton()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: { })
-    }
     
     func addRightBarButton() {
         let rightButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(done))

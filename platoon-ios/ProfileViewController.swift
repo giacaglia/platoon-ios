@@ -44,7 +44,7 @@ class ProfileViewController : UIViewController {
     }
     
     func showProfile() {
-        print("lalal")
+        self.navigationController?.pushViewController(EditProfileViewController(), animated: true)
     }
     
     func back() {

@@ -61,6 +61,7 @@
 		88BB34E81CF699E500D47A1C /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E71CF699E500D47A1C /* LoadViewController.swift */; };
 		88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */; };
 		88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */; };
+		88C13A7C1D05FB85001EDB5C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		88BB34E71CF699E500D47A1C /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripPlanningViewController.swift; sourceTree = "<group>"; };
 		88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCell.swift; sourceTree = "<group>"; };
+		88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				884EB24D1CFE219900987CAD /* AddDriverViewController.swift */,
 				884EB24B1CFE1C1A00987CAD /* FleetProfileViewController.swift */,
 				884EB24F1CFE24B400987CAD /* LoadHistoryViewController.swift */,
+				88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				884EB24E1CFE219900987CAD /* AddDriverViewController.swift in Sources */,
 				884EB24A1CFE14AD00987CAD /* FleetViewController.swift in Sources */,
 				88BB348C1CF4F15600D47A1C /* BankInformationViewController.swift in Sources */,
+				88C13A7C1D05FB85001EDB5C /* EditProfileViewController.swift in Sources */,
 				884EB2481CFE0F0F00987CAD /* BankViewController.swift in Sources */,
 				884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */,
 				88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */,

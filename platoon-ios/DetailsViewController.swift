@@ -58,7 +58,6 @@ class DetailsViewController : UIViewController {
         self.navigationController?.pushViewController(BankInformationViewController(), animated: true)
     }
 
-    
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             constrain(tableView, replace: tableViewConstrain) { tableView in
@@ -78,7 +77,7 @@ class DetailsViewController : UIViewController {
             tableView.left   == tableView.superview!.left
             tableView.right  == tableView.superview!.right
         }
-        self.view.layoutIfNeeded()        
+        self.view.layoutIfNeeded()
     }
 }
 
