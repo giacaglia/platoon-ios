@@ -19,7 +19,7 @@ class CreateAccountViewController : UIViewController {
         self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
         self.navigationController?.navigationBar.tintColor = .whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName:AppearanceManager.boldFont(20)]
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
 
         self.addTitle()
         self.addRightBarButton()

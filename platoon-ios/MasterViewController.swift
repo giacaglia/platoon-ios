@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Loads"
         self.addLeftButton()
         self.addRightButton()
@@ -24,10 +25,14 @@ class MasterViewController: UITableViewController {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName:AppearanceManager.boldFont(20)]
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-
         
         self.tableView.registerClass(LoadCell.self, forCellReuseIdentifier: LoadCell.cellIdentifier())        
         self.tableView.separatorStyle = .None
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidLayoutSubviews()
+        self.presentViewController(GetStartedViewController(), animated: true, completion: nil)
     }
     
     private func addLeftButton() {

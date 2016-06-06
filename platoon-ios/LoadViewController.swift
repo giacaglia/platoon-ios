@@ -21,7 +21,6 @@ class LoadViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
         self.title = "Greylock Importers"
-   
         self.addRightBarButton()
         
         self.view.addSubview(mapView)

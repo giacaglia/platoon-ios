@@ -20,7 +20,6 @@ class TripPlanningViewController: UIViewController {
         self.title = "Trip Planning"
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         
-        
         monthView.backgroundColor = .whiteColor()
         self.view.addSubview(monthView)
         

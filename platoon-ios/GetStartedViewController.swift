@@ -47,20 +47,17 @@ class GetStartedViewController : UIViewController {
         let getStartedButton = UIButton()
         getStartedButton.setTitle("Get Started", forState: .Normal)
         getStartedButton.setTitleColor(AppearanceManager.sharedInstance.cerulean, forState: .Normal)
-        getStartedButton.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
+        getStartedButton.titleLabel?.font = AppearanceManager.blackFont(20)
         getStartedButton.addTarget(self, action: #selector(didPressGetStarted), forControlEvents: .TouchUpInside)
         getStartedButton.setImage(UIImage(named: "arrow_forward"), forState: .Normal)
+        getStartedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 135, 0, -135)
         self.view.addSubview(getStartedButton)
         constrain(getStartedButton) { getStartedButton in
             getStartedButton.bottom  == getStartedButton.superview!.bottom - 20
             getStartedButton.centerX == getStartedButton.superview!.centerX
-            
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
 
     private func addImageTextIndex(pageIndex: Int, imageName: String, titleText: String, subtitleText: String) {
         let truckImageView = UIImageView()
