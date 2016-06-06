@@ -222,4 +222,14 @@ class NameTableViewCell : UITableViewCell {
         phoneTextField.attributedPlaceholder = NSAttributedString(string:placeholderText,
                                                                   attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
     }
+    
+    func setQuestion(placeholderText: String, text: String) {
+        textField.attributedPlaceholder = NSAttributedString(string:placeholderText,
+                                                             attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
+        phoneTextField.attributedPlaceholder = NSAttributedString(string:placeholderText,
+                                                                  attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
+        
+        textField.text = text
+        phoneTextField.text = text
+    }
 }

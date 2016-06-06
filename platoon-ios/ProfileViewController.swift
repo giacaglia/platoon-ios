@@ -44,6 +44,7 @@ class ProfileViewController : UIViewController {
     }
     
     func showProfile() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(EditProfileViewController(), animated: true)
     }
     
