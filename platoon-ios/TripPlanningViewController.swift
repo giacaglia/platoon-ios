@@ -14,7 +14,6 @@ class TripPlanningViewController: UIViewController {
     let tableView = UITableView()
     let dateCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
     let monthView = UIView()
-    
     var selectedIndex = NSIndexPath(forItem: 7, inSection: 0)
     
     override func viewDidLoad() {
@@ -183,6 +182,8 @@ extension TripPlanningViewController : UICollectionViewDelegate, UICollectionVie
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath
         collectionView.reloadData()
+        let indexPath = NSIndexPath(forRow: 0, inSection: 1)
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
     }
 }
 
