@@ -28,7 +28,8 @@ class ProfileViewController : UIViewController {
     private func addLeftButton() {
         let button = UIButton(type: .Custom)
         button.setTitle("Edit", forState: .Normal)
-        button.frame = CGRectMake(0, 0, 40, 31)
+        button.titleLabel!.font = AppearanceManager.semiboldFont(17)
+        button.frame = CGRectMake(0, 0, 35, 30)
         button.addTarget(self, action: #selector(showProfile), forControlEvents: .TouchUpInside)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = barButton
