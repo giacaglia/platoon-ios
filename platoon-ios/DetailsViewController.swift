@@ -16,6 +16,9 @@ class DetailsViewController : UIViewController {
     
     let arrayQuestions = ["First Name", "Last Name", "Company Name", "MC or USDOT #", "City", "State", "Zip Code"]
     let tableView = UITableView()
+    
+    var tableViewConstrain : ConstraintGroup = ConstraintGroup()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
@@ -31,9 +34,9 @@ class DetailsViewController : UIViewController {
         tableView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         tableView.separatorStyle = .None
         tableView.tableFooterView = UIView()
-        constrain(tableView) { tableView in
-            tableView.bottom == tableView.superview!.bottom
+        constrain(tableView, replace: tableViewConstrain) { tableView in
             tableView.top    == tableView.superview!.top
+            tableView.height == tableView.superview!.height
             tableView.left   == tableView.superview!.left
             tableView.right  == tableView.superview!.right
         }
@@ -57,16 +60,25 @@ class DetailsViewController : UIViewController {
 
     
     func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-//            self.tableView.frame.origin.y -= keyboardSize.height
-//        }
-        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            constrain(tableView, replace: tableViewConstrain) { tableView in
+                tableView.top    == tableView.superview!.top
+                tableView.height == tableView.superview!.height - keyboardSize.size.height
+                tableView.left   == tableView.superview!.left
+                tableView.right  == tableView.superview!.right
+            }
+            self.view.layoutIfNeeded()
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-//            self.view.frame.origin.y += keyboardSize.height
-//        }
+        constrain(tableView, replace: tableViewConstrain) { tableView in
+            tableView.top    == tableView.superview!.top
+            tableView.height == tableView.superview!.height
+            tableView.left   == tableView.superview!.left
+            tableView.right  == tableView.superview!.right
+        }
+        self.view.layoutIfNeeded()        
     }
 }
 
