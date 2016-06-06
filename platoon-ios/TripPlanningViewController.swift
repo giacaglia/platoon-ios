@@ -25,8 +25,18 @@ class TripPlanningViewController: UIViewController {
         monthView.backgroundColor = .whiteColor()
         self.view.addSubview(monthView)
         
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([ .Day, .Month], fromDate: NSDate())
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        let month = components.month
+        let months = dateFormatter.monthSymbols
+        let monthSymbol = months[month-1]
+        let day = components.day
+        
+        selectedIndex = NSIndexPath(forItem: day, inSection: 0)
+        
         let monthLabel = UILabel()
-        monthLabel.text = "November"
+        monthLabel.text = monthSymbol
         monthLabel.textAlignment = .Center
         monthLabel.font = AppearanceManager.lightFont(14)
         monthLabel.textColor = .blackColor()
@@ -145,7 +155,10 @@ extension TripPlanningViewController : UITableViewDelegate, UITableViewDataSourc
 
 extension TripPlanningViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        let calendar = NSCalendar.currentCalendar()
+        let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: NSDate())
+        let numDays = range.length
+        return numDays
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
