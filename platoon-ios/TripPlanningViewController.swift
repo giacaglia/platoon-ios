@@ -15,6 +15,8 @@ class TripPlanningViewController: UIViewController {
     let dateCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
     let monthView = UIView()
     
+    var selectedIndex = NSIndexPath(forItem: 7, inSection: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Trip Planning"
@@ -156,12 +158,18 @@ extension TripPlanningViewController : UICollectionViewDelegate, UICollectionVie
         else {
             cell.setUpdated(false)
         }
+        if indexPath == selectedIndex {
+            cell.setSelected(true)
+        }
+        else {
+            cell.setSelected(false)
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DateCell.cellIdentifier(), forIndexPath: indexPath) as! DateCell
-        cell.setSelected(true)
+        selectedIndex = indexPath
+        collectionView.reloadData()
     }
 }
 
@@ -228,17 +236,15 @@ class DateCell: UICollectionViewCell {
     }
     
     private func setSelected(selected: Bool) {
-        dispatch_async(dispatch_get_main_queue()) { 
-            if selected {
-                self.dateLabel.font = AppearanceManager.regularFont(22)
-                self.dateLabel.textColor = .whiteColor()
-                self.dateLabel.backgroundColor = AppearanceManager.sharedInstance.azure
-            }
-            else {
-                self.dateLabel.font = AppearanceManager.extraLightFont(22)
-                self.dateLabel.textColor = AppearanceManager.sharedInstance.greyishBrownTwo
-                self.dateLabel.backgroundColor = .clearColor()
-            }
+        if selected {
+            self.dateLabel.font = AppearanceManager.regularFont(22)
+            self.dateLabel.textColor = .whiteColor()
+            self.dateLabel.backgroundColor = AppearanceManager.sharedInstance.azure
+        }
+        else {
+            self.dateLabel.font = AppearanceManager.extraLightFont(22)
+            self.dateLabel.textColor = AppearanceManager.sharedInstance.greyishBrownTwo
+            self.dateLabel.backgroundColor = .clearColor()
         }
     }
 }
