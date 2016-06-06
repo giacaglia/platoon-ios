@@ -187,7 +187,7 @@ extension LoadHistoryViewController {
         constrain(barChartView) { barChartView in
             barChartView.centerX == barChartView.superview!.centerX
             barChartView.top     == barChartView.superview!.top + 214
-            barChartView.height  == 100
+            barChartView.height  == 120
             barChartView.width   == 320
         }
         
@@ -211,6 +211,7 @@ extension LoadHistoryViewController {
         chartView.leftAxis.gridColor = UIColor(white: 210/255.0, alpha: 1.0)
         chartView.leftAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
         chartView.leftAxis.labelFont = AppearanceManager.lightFont(8.0)
+        chartView.leftAxis.axisMinValue = 0.0
         
         chartView.xAxis.labelPosition = .Bottom
         chartView.xAxis.enabled = true
