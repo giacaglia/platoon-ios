@@ -180,7 +180,7 @@ extension LoadHistoryViewController {
         barChartView.pinchZoomEnabled = false
         barChartView.noDataText = "You need to provide data for the chart."
 
-        self.setChart(barChartView, dataPoints: ["January", "February", "March", "April", "June", "July"], values: [5.0, 17.0, 6.0, 10.0, 15.0, 7.0])
+        self.addDataPoints(["1st", "10th", "15th", "20th", "25th", "30th"], values: [5.0, 17.0, 6.0, 10.0, 15.0, 7.0])
 
         self.view.addSubview(barChartView)
         
@@ -190,10 +190,9 @@ extension LoadHistoryViewController {
             barChartView.height  == 120
             barChartView.width   == 320
         }
-        
     }
     
-    private func setChart(chartView: BarChartView!, dataPoints: [String], values: [Double]) {
+    private func addDataPoints(dataPoints: [String], values: [Double]) {
         var dataEntries = [ChartDataEntry]()
         
         for i in 0..<dataPoints.count {
@@ -205,22 +204,22 @@ extension LoadHistoryViewController {
         barCharDataSet.colors = [AppearanceManager.sharedInstance.cerulean]
         barCharDataSet.drawValuesEnabled = true
 
-        chartView.data = BarChartData(xVals: dataPoints, dataSet: barCharDataSet)
+        barChartView.data = BarChartData(xVals: dataPoints, dataSet: barCharDataSet)
         
-        chartView.leftAxis.drawGridLinesEnabled = true
-        chartView.leftAxis.gridColor = UIColor(white: 210/255.0, alpha: 1.0)
-        chartView.leftAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
-        chartView.leftAxis.labelFont = AppearanceManager.lightFont(8.0)
-        chartView.leftAxis.axisMinValue = 0.0
+        barChartView.leftAxis.drawGridLinesEnabled = true
+        barChartView.leftAxis.gridColor = UIColor(white: 210/255.0, alpha: 1.0)
+        barChartView.leftAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
+        barChartView.leftAxis.labelFont = AppearanceManager.lightFont(8.0)
+        barChartView.leftAxis.axisMinValue = 0.0
         
-        chartView.xAxis.labelPosition = .Bottom
-        chartView.xAxis.enabled = true
-        chartView.xAxis.drawGridLinesEnabled = false
-        chartView.xAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
-        chartView.xAxis.labelFont = AppearanceManager.lightFont(13.0)
+        barChartView.xAxis.labelPosition = .Bottom
+        barChartView.xAxis.enabled = true
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
+        barChartView.xAxis.labelFont = AppearanceManager.lightFont(13.0)
         
-        chartView.legend.enabled = false
-        chartView.descriptionText = ""
+        barChartView.legend.enabled = false
+        barChartView.descriptionText = ""
      }
 }
 
