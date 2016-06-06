@@ -10,9 +10,10 @@ import UIKit
 import Cartography
 import Charts
 
-
 class LoadHistoryViewController : UIViewController {
     let tableView = UITableView(frame: CGRectZero, style: .Grouped)
+    var barChartView = BarChartView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
@@ -20,6 +21,7 @@ class LoadHistoryViewController : UIViewController {
 
         self.addMonthSelecter()
         self.addSummary()
+        self.addSummaryLineChart()
         
         tableView.registerClass(LoadCell.self, forCellReuseIdentifier: LoadCell.cellIdentifier())
         tableView.separatorStyle = .None
@@ -88,6 +90,11 @@ class LoadHistoryViewController : UIViewController {
         
     }
     
+
+}
+
+
+extension LoadHistoryViewController {
     func addSummary() {
         let loadLabel = UILabel()
         loadLabel.text = "Load Summary"
@@ -134,7 +141,7 @@ class LoadHistoryViewController : UIViewController {
         loads.font = AppearanceManager.mediumFont(18)
         loads.textColor = AppearanceManager.sharedInstance.brownishGrey
         self.view.addSubview(loads)
-
+        
         constrain(loadLabel, totalLoadsLabel, loads) { loadLabel, totalLoadsLabel, loads in
             totalLoadsLabel.left == totalLoadsLabel.superview!.left + 168
             totalLoadsLabel.top  == loadLabel.bottom + 10
@@ -164,6 +171,61 @@ class LoadHistoryViewController : UIViewController {
             averageLoadLabel.left == averageLoadLabel.superview!.left + 248
             averageLoadLabel.top == loadLabel.bottom + 34
         }
+    }
+    
+    private func addSummaryLineChart() {
+        barChartView.gridBackgroundColor = .whiteColor()
+        barChartView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
+        barChartView.leftAxis.enabled = false
+        barChartView.pinchZoomEnabled = false
+        barChartView.xAxis.enabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.axisLineColor = .clearColor()
+        barChartView.xAxis.labelTextColor = .clearColor()
+        self.setChart(barChartView, dataPoints: ["April", "June", "July"], values: [10.0, 15.0, 7.0])
+
+        self.view.addSubview(barChartView)
+        
+        constrain(barChartView) { barChartView in
+            barChartView.centerX == barChartView.superview!.centerX
+            barChartView.top     == barChartView.superview!.top + 234
+            barChartView.height  == 80
+            barChartView.width   == 300
+        }
+        
+    }
+    
+    private func setChart(chartView: BarChartView!, dataPoints: [String], values: [Double]) {
+        chartView.noDataText = "You need to provide data for the chart."
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let barCharDataSet = BarChartDataSet(yVals: dataEntries, label: "Weeks")
+        barCharDataSet.colors = [AppearanceManager.sharedInstance.cerulean, AppearanceManager.sharedInstance.cerulean, AppearanceManager.sharedInstance.cerulean]
+        barCharDataSet.drawValuesEnabled = true
+        
+        let barChatData = BarChartData(xVals: dataPoints, dataSet: barCharDataSet)
+        chartView.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
+        chartView.gridBackgroundColor = AppearanceManager.sharedInstance.cerulean
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
+        chartView.leftAxis.labelFont = AppearanceManager.regularFont(14)
+        chartView.leftAxis.axisLineColor = AppearanceManager.sharedInstance.cerulean
+        chartView.rightAxis.enabled = false
+        chartView.rightAxis.drawGridLinesEnabled = false
+        chartView.xAxis.labelPosition = .Bottom
+        chartView.xAxis.enabled = true
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.xAxis.axisLineColor = AppearanceManager.sharedInstance.lightGrey
+        chartView.xAxis.labelTextColor = AppearanceManager.sharedInstance.brownishGrey
+        chartView.xAxis.labelFont = AppearanceManager.regularFont(14)
+        chartView.legend.enabled = false
+        chartView.descriptionText = ""
+        chartView.data = barChatData
     }
 }
 
