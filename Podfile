@@ -5,7 +5,7 @@ target 'platoon' do
 
   # Pods for platoon
   pod 'Firebase', '>= 2.5.1'
-
+  pod 'Firebase/Database'
 
   target 'platoon-iosTests' do
     inherit! :search_paths
