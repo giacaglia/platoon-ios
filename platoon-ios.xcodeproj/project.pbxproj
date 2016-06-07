@@ -63,14 +63,6 @@
 		88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */; };
 		88C13A7C1D05FB85001EDB5C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */; };
 		88C13A801D061CDC001EDB5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */; };
-		88C13A821D061D7F001EDB5C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A811D061D7F001EDB5C /* Firebase.framework */; };
-		88C13A831D061D86001EDB5C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A811D061D7F001EDB5C /* Firebase.framework */; };
-		88C13A841D061D86001EDB5C /* Firebase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88C13A811D061D7F001EDB5C /* Firebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		88C13A861D061DB4001EDB5C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A851D061DB4001EDB5C /* libicucore.tbd */; };
-		88C13A881D061DBF001EDB5C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A871D061DBF001EDB5C /* libc++.tbd */; };
-		88C13A8A1D061DC5001EDB5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A891D061DC5001EDB5C /* CFNetwork.framework */; };
-		88C13A8C1D061DCB001EDB5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A8B1D061DCB001EDB5C /* Security.framework */; };
-		88C13A8E1D061DD1001EDB5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C13A8D1D061DD1001EDB5C /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +89,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				88C13A841D061D86001EDB5C /* Firebase.framework in CopyFiles */,
 				88BB34DB1CF63A8100D47A1C /* Realm.framework in CopyFiles */,
 				88BA84E21D0089DA00C72AA8 /* Charts.framework in CopyFiles */,
 				88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */,
@@ -166,12 +157,6 @@
 		88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCell.swift; sourceTree = "<group>"; };
 		88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		88C13A811D061D7F001EDB5C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
-		88C13A851D061DB4001EDB5C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		88C13A871D061DBF001EDB5C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		88C13A891D061DC5001EDB5C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		88C13A8B1D061DCB001EDB5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		88C13A8D1D061DD1001EDB5C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,13 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88C13A8E1D061DD1001EDB5C /* SystemConfiguration.framework in Frameworks */,
-				88C13A8C1D061DCB001EDB5C /* Security.framework in Frameworks */,
-				88C13A8A1D061DC5001EDB5C /* CFNetwork.framework in Frameworks */,
-				88C13A881D061DBF001EDB5C /* libc++.tbd in Frameworks */,
-				88C13A861D061DB4001EDB5C /* libicucore.tbd in Frameworks */,
-				88C13A821D061D7F001EDB5C /* Firebase.framework in Frameworks */,
-				88C13A831D061D86001EDB5C /* Firebase.framework in Frameworks */,
 				88BA84E01D0089D500C72AA8 /* Charts.framework in Frameworks */,
 				88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */,
 				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
@@ -298,12 +276,6 @@
 		88BB347C1CF4A79D00D47A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				88C13A8D1D061DD1001EDB5C /* SystemConfiguration.framework */,
-				88C13A8B1D061DCB001EDB5C /* Security.framework */,
-				88C13A891D061DC5001EDB5C /* CFNetwork.framework */,
-				88C13A871D061DBF001EDB5C /* libc++.tbd */,
-				88C13A851D061DB4001EDB5C /* libicucore.tbd */,
-				88C13A811D061D7F001EDB5C /* Firebase.framework */,
 				88BA84DF1D0089D500C72AA8 /* Charts.framework */,
 				88BB34E21CF647C900D47A1C /* RealmSwift.framework */,
 				88BB34D81CF63A7A00D47A1C /* Realm.framework */,
