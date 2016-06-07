@@ -63,6 +63,9 @@
 		88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */; };
 		88C13A7C1D05FB85001EDB5C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */; };
 		88C13A801D061CDC001EDB5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */; };
+		9B544325E932660940F5AB10 /* libPods-platoon-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */; };
+		B64911AC8CA81AE1F6BC2A4C /* libPods-platoon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A899AB353918F671E86DB9A /* libPods-platoon.a */; };
+		F9DD2D41B0D60CD2A4DB08F7 /* libPods-platoon-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A899AB353918F671E86DB9A /* libPods-platoon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E183B13336C44BF580F5C /* Pods-platoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon/Pods-platoon.release.xcconfig"; sourceTree = "<group>"; };
+		70C9655240B38591B8BD4562 /* Pods-platoon-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		884C8D8D1CE66E2600448E70 /* platoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = platoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884C8D901CE66E2600448E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884C8D921CE66E2600448E70 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +165,10 @@
 		88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCell.swift; sourceTree = "<group>"; };
 		88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94CBAA4C64B4AAE42E3884C4 /* Pods-platoon-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D70A420C358B6FB533F451D5 /* Pods-platoon-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosTests/Pods-platoon-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4E8090908F2AF72C770C7CF /* Pods-platoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-platoon/Pods-platoon.debug.xcconfig"; sourceTree = "<group>"; };
+		EA399C3333188F7E9341BB80 /* Pods-platoon-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosTests/Pods-platoon-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +180,7 @@
 				88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */,
 				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
 				88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */,
+				B64911AC8CA81AE1F6BC2A4C /* libPods-platoon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DD2D41B0D60CD2A4DB08F7 /* libPods-platoon-iosTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B544325E932660940F5AB10 /* libPods-platoon-iosUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +212,7 @@
 				884C8DA61CE66E2600448E70 /* platoon-iosTests */,
 				884C8DB11CE66E2600448E70 /* platoon-iosUITests */,
 				884C8D8E1CE66E2600448E70 /* Products */,
+				8A3AFDD0CDAF2100DB562D4D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,6 +296,9 @@
 				88BB34E21CF647C900D47A1C /* RealmSwift.framework */,
 				88BB34D81CF63A7A00D47A1C /* Realm.framework */,
 				88BB347A1CF4A78200D47A1C /* Cartography.framework */,
+				2A899AB353918F671E86DB9A /* libPods-platoon.a */,
+				23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */,
+				3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -341,6 +360,19 @@
 			name = Onboarding;
 			sourceTree = "<group>";
 		};
+		8A3AFDD0CDAF2100DB562D4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4E8090908F2AF72C770C7CF /* Pods-platoon.debug.xcconfig */,
+				495E183B13336C44BF580F5C /* Pods-platoon.release.xcconfig */,
+				EA399C3333188F7E9341BB80 /* Pods-platoon-iosTests.debug.xcconfig */,
+				D70A420C358B6FB533F451D5 /* Pods-platoon-iosTests.release.xcconfig */,
+				94CBAA4C64B4AAE42E3884C4 /* Pods-platoon-iosUITests.debug.xcconfig */,
+				70C9655240B38591B8BD4562 /* Pods-platoon-iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,10 +380,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 884C8DB71CE66E2600448E70 /* Build configuration list for PBXNativeTarget "platoon" */;
 			buildPhases = (
+				C1EBA915C3CB5E2CE1E2C4F7 /* [CP] Check Pods Manifest.lock */,
 				884C8D891CE66E2500448E70 /* Sources */,
 				884C8D8A1CE66E2500448E70 /* Frameworks */,
 				884C8D8B1CE66E2500448E70 /* Resources */,
 				88BB347D1CF4A7E700D47A1C /* CopyFiles */,
+				BC28C019C3E9DE93619770C7 /* [CP] Embed Pods Frameworks */,
+				99789A3182CD03E39C6E7E2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,9 +401,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 884C8DBA1CE66E2600448E70 /* Build configuration list for PBXNativeTarget "platoon-iosTests" */;
 			buildPhases = (
+				053F6A1E9F32F43C9C6E7F71 /* [CP] Check Pods Manifest.lock */,
 				884C8D9F1CE66E2600448E70 /* Sources */,
 				884C8DA01CE66E2600448E70 /* Frameworks */,
 				884C8DA11CE66E2600448E70 /* Resources */,
+				71BF00469A83882AD97F694C /* [CP] Embed Pods Frameworks */,
+				D623AE67422D20C1CBEA0491 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,9 +422,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 884C8DBD1CE66E2600448E70 /* Build configuration list for PBXNativeTarget "platoon-iosUITests" */;
 			buildPhases = (
+				B912AE2FBACB9DC56A3ED541 /* [CP] Check Pods Manifest.lock */,
 				884C8DAA1CE66E2600448E70 /* Sources */,
 				884C8DAB1CE66E2600448E70 /* Frameworks */,
 				884C8DAC1CE66E2600448E70 /* Resources */,
+				5036A151E085790D6B5C446F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,6 +527,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		053F6A1E9F32F43C9C6E7F71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5036A151E085790D6B5C446F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71BF00469A83882AD97F694C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-platoon-iosTests/Pods-platoon-iosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99789A3182CD03E39C6E7E2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-platoon/Pods-platoon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B912AE2FBACB9DC56A3ED541 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC28C019C3E9DE93619770C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-platoon/Pods-platoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1EBA915C3CB5E2CE1E2C4F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D623AE67422D20C1CBEA0491 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-platoon-iosTests/Pods-platoon-iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		884C8D891CE66E2500448E70 /* Sources */ = {
@@ -658,6 +821,7 @@
 		};
 		884C8DB81CE66E2600448E70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4E8090908F2AF72C770C7CF /* Pods-platoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -678,6 +842,7 @@
 		};
 		884C8DB91CE66E2600448E70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 495E183B13336C44BF580F5C /* Pods-platoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -698,6 +863,7 @@
 		};
 		884C8DBB1CE66E2600448E70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA399C3333188F7E9341BB80 /* Pods-platoon-iosTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "platoon-iosTests/Info.plist";
@@ -710,6 +876,7 @@
 		};
 		884C8DBC1CE66E2600448E70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D70A420C358B6FB533F451D5 /* Pods-platoon-iosTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "platoon-iosTests/Info.plist";
@@ -722,6 +889,7 @@
 		};
 		884C8DBE1CE66E2600448E70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94CBAA4C64B4AAE42E3884C4 /* Pods-platoon-iosUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "platoon-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -733,6 +901,7 @@
 		};
 		884C8DBF1CE66E2600448E70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70C9655240B38591B8BD4562 /* Pods-platoon-iosUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "platoon-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
