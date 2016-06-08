@@ -18,32 +18,31 @@ class ProfileViewController : UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = AppearanceManager.sharedInstance.backgroundColor
         self.title = "Profile"
-        self.addLeftButton()
         self.addRightButton()
         
         self.addImageCenter()
         self.addButtons()
     }
     
-    private func addLeftButton() {
+    private func addRightButton() {
         let button = UIButton(type: .Custom)
         button.setTitle("Edit", forState: .Normal)
         button.titleLabel!.font = AppearanceManager.semiboldFont(17)
         button.frame = CGRectMake(0, 0, 35, 30)
         button.addTarget(self, action: #selector(showProfile), forControlEvents: .TouchUpInside)
         let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.leftBarButtonItem = barButton
-    }
-
-    private func addRightButton() {
-        let button: UIButton = UIButton(type: .Custom)
-        button.setImage(UIImage(named: "rightBack"), forState: UIControlState.Normal)
-        button.frame = CGRectMake(0, 0, 30, 31)
-        button.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
-        let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
     }
-    
+
+//    private func addRightButton() {
+//        let button: UIButton = UIButton(type: .Custom)
+//        button.setImage(UIImage(named: "rightBack"), forState: UIControlState.Normal)
+//        button.frame = CGRectMake(0, 0, 30, 31)
+//        button.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+//        let barButton = UIBarButtonItem(customView: button)
+//        self.navigationItem.rightBarButtonItem = barButton
+//    }
+//    
     func showProfile() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(EditProfileViewController(), animated: true)

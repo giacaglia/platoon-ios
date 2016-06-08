@@ -24,7 +24,6 @@ class MasterViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = .whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName:AppearanceManager.boldFont(20)]
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         self.tableView.registerClass(LoadCell.self, forCellReuseIdentifier: LoadCell.cellIdentifier())        
         self.tableView.separatorStyle = .None
@@ -49,10 +48,12 @@ class MasterViewController: UITableViewController {
     }
     
     func showProfile() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
     
     func showCalendar() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Back", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(TripPlanningViewController(), animated: true)
     }
     
@@ -76,6 +77,7 @@ extension MasterViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.navigationController?.pushViewController(LoadViewController(), animated: true)
     }
 }
