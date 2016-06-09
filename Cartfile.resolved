@@ -1,3 +1,4 @@
+github "Alamofire/Alamofire" "3.4.0"
 github "robb/Cartography" "0.6.0"
 github "danielgindi/Charts" "v2.2.5"
 github "realm/realm-cocoa" "v1.0.0"

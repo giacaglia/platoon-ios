@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8834709B1D09BFA8008D5174 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8834709A1D09BFA8008D5174 /* Alamofire.framework */; };
+		8834709C1D09BFB9008D5174 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8834709A1D09BFA8008D5174 /* Alamofire.framework */; };
+		8834709D1D09BFB9008D5174 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8834709A1D09BFA8008D5174 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8834709F1D09C000008D5174 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8834709E1D09C000008D5174 /* Networking.swift */; };
 		884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D901CE66E2600448E70 /* AppDelegate.swift */; };
 		884C8D931CE66E2600448E70 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D921CE66E2600448E70 /* MasterViewController.swift */; };
 		884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D941CE66E2600448E70 /* DetailViewController.swift */; };
@@ -95,6 +99,7 @@
 				88BB34DB1CF63A8100D47A1C /* Realm.framework in CopyFiles */,
 				88BA84E21D0089DA00C72AA8 /* Charts.framework in CopyFiles */,
 				88BB347E1CF4A7FF00D47A1C /* Cartography.framework in CopyFiles */,
+				8834709D1D09BFB9008D5174 /* Alamofire.framework in CopyFiles */,
 				88BB34E51CF647CD00D47A1C /* RealmSwift.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +112,8 @@
 		3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		495E183B13336C44BF580F5C /* Pods-platoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon/Pods-platoon.release.xcconfig"; sourceTree = "<group>"; };
 		70C9655240B38591B8BD4562 /* Pods-platoon-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8834709A1D09BFA8008D5174 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		8834709E1D09C000008D5174 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		884C8D8D1CE66E2600448E70 /* platoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = platoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884C8D901CE66E2600448E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884C8D921CE66E2600448E70 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -177,8 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BA84E01D0089D500C72AA8 /* Charts.framework in Frameworks */,
+				8834709B1D09BFA8008D5174 /* Alamofire.framework in Frameworks */,
 				88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */,
 				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
+				8834709C1D09BFB9008D5174 /* Alamofire.framework in Frameworks */,
 				88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */,
 				B64911AC8CA81AE1F6BC2A4C /* libPods-platoon.a in Frameworks */,
 			);
@@ -233,6 +242,7 @@
 				884C8D961CE66E2600448E70 /* Main.storyboard */,
 				884C8D9B1CE66E2600448E70 /* LaunchScreen.storyboard */,
 				88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */,
+				8834709E1D09C000008D5174 /* Networking.swift */,
 				88BB34DE1CF6438600D47A1C /* Extensions */,
 				88BB34DF1CF6439D00D47A1C /* Objects */,
 				88BB34771CF49E5E00D47A1C /* ViewControllers */,
@@ -292,6 +302,7 @@
 		88BB347C1CF4A79D00D47A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8834709A1D09BFA8008D5174 /* Alamofire.framework */,
 				88BA84DF1D0089D500C72AA8 /* Charts.framework */,
 				88BB34E21CF647C900D47A1C /* RealmSwift.framework */,
 				88BB34D81CF63A7A00D47A1C /* Realm.framework */,
@@ -677,6 +688,7 @@
 				88BB34791CF49EB300D47A1C /* GetStartedViewController.swift in Sources */,
 				88BB34801CF4B1BA00D47A1C /* AppearanceManager.swift in Sources */,
 				884EB2451CFDEFA500987CAD /* User.swift in Sources */,
+				8834709F1D09C000008D5174 /* Networking.swift in Sources */,
 				88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */,
 				88BB34E11CF6444100D47A1C /* Company.swift in Sources */,
 				88BB348E1CF4F8CE00D47A1C /* ThankYouViewController.swift in Sources */,

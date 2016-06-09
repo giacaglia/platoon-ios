@@ -96,10 +96,7 @@ class ThankYouViewController : UIViewController {
     }
     
     func didPressShare() {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {
-            let bankVC = self.presentingViewController
-            
-        })
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
 //        let textToShare = "Swift is awesome!  Check out this website about it!"
 //        
 //        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/") {
