@@ -48,7 +48,6 @@ class GetStartedViewController : UIViewController {
     }
     
     private func addGetStartedButton() {
-        
         let getStartedButton = DGTAuthenticateButton(authenticationCompletion: { (session: DGTSession?, error: NSError?) in
             if (session != nil) {
                 GetStartedViewController.dismissView = true
@@ -67,7 +66,6 @@ class GetStartedViewController : UIViewController {
         getStartedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 135, 0, -135)
         self.view.addSubview(getStartedButton)
         
-        
         let digitsAppearance = DGTAppearance()
         digitsAppearance.backgroundColor = .whiteColor()
         digitsAppearance.accentColor = AppearanceManager.sharedInstance.cerulean
@@ -80,7 +78,6 @@ class GetStartedViewController : UIViewController {
             getStartedButton.bottom  == getStartedButton.superview!.bottom - 20
             getStartedButton.centerX == getStartedButton.superview!.centerX
         }
-
     }
     
 

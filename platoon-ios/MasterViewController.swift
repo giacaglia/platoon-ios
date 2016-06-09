@@ -18,6 +18,7 @@ class MasterViewController: UITableViewController {
         self.title = "Loads"
         self.addLeftButton()
         self.addRightButton()
+        self.getLoads()
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
@@ -33,7 +34,6 @@ class MasterViewController: UITableViewController {
         super.viewDidAppear(animated)
         if !GetStartedViewController.dismissView {
             self.presentViewController(GetStartedViewController(), animated: true) { }
-
         }
     }
     
@@ -68,6 +68,10 @@ class MasterViewController: UITableViewController {
 }
 
 extension MasterViewController {
+    private func getLoads() {
+        Networking.fetchLoads()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -79,7 +83,6 @@ extension MasterViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
 
-//        let object = objects[indexPath.row]
 //        cell.setLoad(object)
         return cell
     }

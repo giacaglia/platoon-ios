@@ -17,38 +17,22 @@
             endingLineNumber = "99"
             landmarkName = "didPressShare()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "platoon.ThankYouViewController.didPressShare () -&gt; ()"
-                  moduleName = "platoon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/giacaglia/Documents/platoon-ios/platoon-ios/ThankYouViewController.swift"
-                  timestampString = "487112716.561293"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "platoon.ThankYouViewController.(didPressShare () -&gt; ()).(closure #1)"
-                  moduleName = "platoon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/giacaglia/Documents/platoon-ios/platoon-ios/ThankYouViewController.swift"
-                  timestampString = "487112716.56166"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "platoon-ios/Networking.swift"
+            timestampString = "487189443.502788"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchLoads()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
