@@ -19,7 +19,7 @@ class MasterViewController: UITableViewController {
         self.title = "Loads"
         self.addLeftButton()
         self.addRightButton()
-        self.getLoads()
+//        self.getLoads()
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
@@ -79,7 +79,8 @@ extension MasterViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.objects.count
+//        return self.objects.count
+        return 4
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -88,8 +89,8 @@ extension MasterViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
-        let load = self.objects[indexPath.row]
-        cell.setLoad(load)
+//        let load = self.objects[indexPath.row]
+//        cell.setLoad(load)
         return cell
     }
     
