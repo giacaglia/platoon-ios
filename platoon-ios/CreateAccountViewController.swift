@@ -50,7 +50,7 @@ class CreateAccountViewController : UIViewController {
         phoneTextField.font = AppearanceManager.mediumFont(22)
         phoneTextField.attributedPlaceholder = NSAttributedString(string:"(617) 981-1234",
                                                                attributes:[NSForegroundColorAttributeName: AppearanceManager.sharedInstance.lightGrey])
-        phoneTextField.keyboardType = .NumberPad
+        phoneTextField.keyboardType = .PhonePad
         self.view.addSubview(phoneTextField)
         
         constrain(phoneLabel, phoneTextField) { phoneLabel, phoneTextField in

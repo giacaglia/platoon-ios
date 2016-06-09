@@ -11,7 +11,6 @@ import Cartography
 
 class BankInformationViewController : UIViewController {
     let tableView = UITableView()
-
     
     let questions = ["Company Name", "Federal Tax Identification Number"]
     override func viewDidLoad() {
@@ -34,6 +33,10 @@ class BankInformationViewController : UIViewController {
         
         self.addRightBarButton()
     }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
     
     
     func addRightBarButton() {
@@ -42,7 +45,8 @@ class BankInformationViewController : UIViewController {
     }
     
     func done() {
-        self.presentViewController(ThankYouViewController(), animated: true) { }
+        GetStartedViewController.dismissView = true
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }
 
 }

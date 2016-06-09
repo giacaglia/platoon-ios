@@ -10,10 +10,10 @@ import UIKit
 import Cartography
 
 class GetStartedViewController : UIViewController {
-    
     private let scrollView = UIScrollView()
     private let pageControl = UIPageControl()
-    
+    static var dismissView = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -55,6 +55,12 @@ class GetStartedViewController : UIViewController {
         constrain(getStartedButton) { getStartedButton in
             getStartedButton.bottom  == getStartedButton.superview!.bottom - 20
             getStartedButton.centerX == getStartedButton.superview!.centerX
+        }
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if GetStartedViewController.dismissView {
+            self.presentingViewController?.dismissViewControllerAnimated(false, completion: { })
         }
     }
     

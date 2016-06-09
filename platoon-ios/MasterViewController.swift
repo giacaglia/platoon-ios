@@ -29,6 +29,14 @@ class MasterViewController: UITableViewController {
         self.tableView.separatorStyle = .None
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if !GetStartedViewController.dismissView {
+            self.presentViewController(GetStartedViewController(), animated: true) { }
+
+        }
+    }
+    
     private func addLeftButton() {
         let button: UIButton = UIButton(type: .Custom)
         button.setImage(UIImage(named: "profile"), forState: UIControlState.Normal)
