@@ -216,10 +216,22 @@ class LoadCell : UITableViewCell {
     }
     
     func setLoad(load: Load) {
-        self.nameLabel.text = load.company.name
-        self.ratingLabel.text = String(load.company.rating)
         self.pickUpLabel.text = load.pickUp
         self.dropOffLabel.text = load.dropOff
+        self.timeLabel.text = load.timePickUp
+        self.truckLabel.text = load.loadType
+        self.numberPalletLabel.text = String(load.numberPallets) + " pallets"
+        
+        let priceTextString =  "$" + String(load.totalPrice) + "0"
+        let myMutableString = NSMutableAttributedString(string: priceTextString, attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(20)])
+        myMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(20), range: NSRange(location:0,length:1))
+        totalPriceLabel.attributedText = myMutableString
+        
+        let pricePerMile = "$" + String(load.pricePerLoad) + "0/mile"
+        let mileMutableString = NSMutableAttributedString(string: pricePerMile, attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(14)])
+        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
+        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
+        priceMileLabel.attributedText = mileMutableString
     }
     
 }

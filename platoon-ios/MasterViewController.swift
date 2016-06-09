@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import RealmSwift
 
 class MasterViewController: UITableViewController {
     var objects = [Load]()
@@ -69,11 +70,16 @@ class MasterViewController: UITableViewController {
 
 extension MasterViewController {
     private func getLoads() {
-        Networking.fetchLoads()
+        Networking.fetchLoads { 
+            print("completion")
+            let realm = try! Realm()
+            self.objects = Array(realm.objects(Load.self))
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.objects.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -82,8 +88,8 @@ extension MasterViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
-
-//        cell.setLoad(object)
+        let load = self.objects[indexPath.row]
+        cell.setLoad(load)
         return cell
     }
     
