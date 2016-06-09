@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import DigitsKit
 
 class GetStartedViewController : UIViewController {
     private let scrollView = UIScrollView()
@@ -43,8 +44,21 @@ class GetStartedViewController : UIViewController {
             pageControl.centerX == pageControl.superview!.centerX
         }
         
+        self.addGetStartedButton()
+    }
+    
+    private func addGetStartedButton() {
         
-        let getStartedButton = UIButton()
+        let getStartedButton = DGTAuthenticateButton(authenticationCompletion: { (session: DGTSession?, error: NSError?) in
+            if (session != nil) {
+                GetStartedViewController.dismissView = true
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: { })
+            } else {
+                NSLog("Authentication error: %@", error!.localizedDescription)
+            }
+        })
+        
+        getStartedButton.backgroundColor = .clearColor()
         getStartedButton.setTitle("Get Started", forState: .Normal)
         getStartedButton.setTitleColor(AppearanceManager.sharedInstance.cerulean, forState: .Normal)
         getStartedButton.titleLabel?.font = AppearanceManager.blackFont(20)
@@ -52,16 +66,21 @@ class GetStartedViewController : UIViewController {
         getStartedButton.setImage(UIImage(named: "arrow_forward"), forState: .Normal)
         getStartedButton.imageEdgeInsets = UIEdgeInsetsMake(0, 135, 0, -135)
         self.view.addSubview(getStartedButton)
+        
+        
+        let digitsAppearance = DGTAppearance()
+        digitsAppearance.backgroundColor = .whiteColor()
+        digitsAppearance.accentColor = AppearanceManager.sharedInstance.cerulean
+        digitsAppearance.headerFont = AppearanceManager.semiboldFont(18)
+        digitsAppearance.labelFont = AppearanceManager.semiboldFont(16)
+        digitsAppearance.bodyFont = AppearanceManager.regularFont(18)
+        getStartedButton.digitsAppearance = digitsAppearance
+        
         constrain(getStartedButton) { getStartedButton in
             getStartedButton.bottom  == getStartedButton.superview!.bottom - 20
             getStartedButton.centerX == getStartedButton.superview!.centerX
         }
-    }
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if GetStartedViewController.dismissView {
-            self.presentingViewController?.dismissViewControllerAnimated(false, completion: { })
-        }
+
     }
     
 

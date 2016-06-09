@@ -11,6 +11,10 @@
 		8834709C1D09BFB9008D5174 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8834709A1D09BFA8008D5174 /* Alamofire.framework */; };
 		8834709D1D09BFB9008D5174 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8834709A1D09BFA8008D5174 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8834709F1D09C000008D5174 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8834709E1D09C000008D5174 /* Networking.swift */; };
+		883470A51D09CB12008D5174 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883470A11D09CB12008D5174 /* Fabric.framework */; };
+		883470A61D09CB12008D5174 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883470A21D09CB12008D5174 /* DigitsKit.framework */; };
+		883470A71D09CB12008D5174 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 883470A31D09CB12008D5174 /* DigitsKitResources.bundle */; };
+		883470A81D09CB12008D5174 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883470A41D09CB12008D5174 /* TwitterCore.framework */; };
 		884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D901CE66E2600448E70 /* AppDelegate.swift */; };
 		884C8D931CE66E2600448E70 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D921CE66E2600448E70 /* MasterViewController.swift */; };
 		884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D941CE66E2600448E70 /* DetailViewController.swift */; };
@@ -66,7 +70,6 @@
 		88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */; };
 		88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */; };
 		88C13A7C1D05FB85001EDB5C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */; };
-		88C13A801D061CDC001EDB5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */; };
 		9B544325E932660940F5AB10 /* libPods-platoon-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */; };
 		B64911AC8CA81AE1F6BC2A4C /* libPods-platoon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A899AB353918F671E86DB9A /* libPods-platoon.a */; };
 		F9DD2D41B0D60CD2A4DB08F7 /* libPods-platoon-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */; };
@@ -114,6 +117,10 @@
 		70C9655240B38591B8BD4562 /* Pods-platoon-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8834709A1D09BFA8008D5174 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		8834709E1D09C000008D5174 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		883470A11D09CB12008D5174 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		883470A21D09CB12008D5174 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		883470A31D09CB12008D5174 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		883470A41D09CB12008D5174 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		884C8D8D1CE66E2600448E70 /* platoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = platoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884C8D901CE66E2600448E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884C8D921CE66E2600448E70 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +178,6 @@
 		88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripPlanningViewController.swift; sourceTree = "<group>"; };
 		88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCell.swift; sourceTree = "<group>"; };
 		88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94CBAA4C64B4AAE42E3884C4 /* Pods-platoon-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D70A420C358B6FB533F451D5 /* Pods-platoon-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosTests/Pods-platoon-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E8090908F2AF72C770C7CF /* Pods-platoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-platoon/Pods-platoon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,9 +189,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883470A61D09CB12008D5174 /* DigitsKit.framework in Frameworks */,
 				88BA84E01D0089D500C72AA8 /* Charts.framework in Frameworks */,
 				8834709B1D09BFA8008D5174 /* Alamofire.framework in Frameworks */,
 				88BB34E31CF647C900D47A1C /* RealmSwift.framework in Frameworks */,
+				883470A51D09CB12008D5174 /* Fabric.framework in Frameworks */,
+				883470A81D09CB12008D5174 /* TwitterCore.framework in Frameworks */,
 				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
 				8834709C1D09BFB9008D5174 /* Alamofire.framework in Frameworks */,
 				88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */,
@@ -294,7 +303,6 @@
 				884C8D941CE66E2600448E70 /* DetailViewController.swift */,
 				884EB2461CFE0EF200987CAD /* Profile */,
 				88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */,
-				88C13A7F1D061CDC001EDB5C /* GoogleService-Info.plist */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -302,6 +310,10 @@
 		88BB347C1CF4A79D00D47A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				883470A11D09CB12008D5174 /* Fabric.framework */,
+				883470A21D09CB12008D5174 /* DigitsKit.framework */,
+				883470A31D09CB12008D5174 /* DigitsKitResources.bundle */,
+				883470A41D09CB12008D5174 /* TwitterCore.framework */,
 				8834709A1D09BFA8008D5174 /* Alamofire.framework */,
 				88BA84DF1D0089D500C72AA8 /* Charts.framework */,
 				88BB34E21CF647C900D47A1C /* RealmSwift.framework */,
@@ -398,6 +410,7 @@
 				88BB347D1CF4A7E700D47A1C /* CopyFiles */,
 				BC28C019C3E9DE93619770C7 /* [CP] Embed Pods Frameworks */,
 				99789A3182CD03E39C6E7E2D /* [CP] Copy Pods Resources */,
+				883470A01D09CAED008D5174 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -504,6 +517,7 @@
 				88BB34CD1CF62C6B00D47A1C /* Graphik-Semibold.otf in Resources */,
 				88BB34C11CF62C6B00D47A1C /* Graphik-Light.otf in Resources */,
 				884C8D9D1CE66E2600448E70 /* LaunchScreen.storyboard in Resources */,
+				883470A71D09CB12008D5174 /* DigitsKitResources.bundle in Resources */,
 				88BB34C91CF62C6B00D47A1C /* Graphik-Regular.otf in Resources */,
 				884C8D9A1CE66E2600448E70 /* Assets.xcassets in Resources */,
 				88BB34C51CF62C6B00D47A1C /* Graphik-Medium.otf in Resources */,
@@ -517,7 +531,6 @@
 				88BB34C71CF62C6B00D47A1C /* Graphik-MediumItalic.otf in Resources */,
 				88BB34BD1CF62C6B00D47A1C /* Graphik-Extralight.otf in Resources */,
 				88BB34B91CF62C6B00D47A1C /* Graphik-Bold.otf in Resources */,
-				88C13A801D061CDC001EDB5C /* GoogleService-Info.plist in Resources */,
 				88BB34CB1CF62C6B00D47A1C /* Graphik-RegularItalic.otf in Resources */,
 				88BB34BB1CF62C6B00D47A1C /* Graphik-BoldItalic.otf in Resources */,
 			);
@@ -584,6 +597,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-platoon-iosTests/Pods-platoon-iosTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		883470A01D09CAED008D5174 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run e59f1cd2d349b2ae191c42a9607d9757243e96be 87036675dc53f7f207822414a13390e996149c76b65849d286e2eecb416732d6";
 		};
 		99789A3182CD03E39C6E7E2D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

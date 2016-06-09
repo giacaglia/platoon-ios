@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import Fabric
+import DigitsKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -19,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
-        FIRApp.configure()
-        let ref = FIRDatabase.database().reference()
+        Fabric.with([Digits.self])
         return true
     }
 

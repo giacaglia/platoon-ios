@@ -23,6 +23,7 @@ class CreateAccountViewController : UIViewController {
 
         self.addTitle()
         self.addRightBarButton()
+  
     }
     
     override func viewDidAppear(animated: Bool) {

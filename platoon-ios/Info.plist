@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UILaunchImageFile</key>
-	<string>LaunchImage</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -22,8 +20,49 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>e59f1cd2d349b2ae191c42a9607d9757243e96be</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>l4y4QzsvHELXEPahOdO4U0QAS</string>
+					<key>consumerSecret</key>
+					<string>WE3sme3T9YLCetHYCsWA9CfHqbVOT7OsyInnJrO4mtXUHKaAVp</string>
+				</dict>
+				<key>KitName</key>
+				<string>Digits</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Graphik-Medium.otf</string>
+		<string>Graphik-Light.otf</string>
+		<string>Graphik-Extralight.otf</string>
+		<string>Graphik-LightItalic.otf</string>
+		<string>Graphik-BoldItalic.otf</string>
+		<string>Graphik-MediumItalic.otf</string>
+		<string>Graphik-ExtralightItalic.otf</string>
+		<string>Graphik-Regular.otf</string>
+		<string>Graphik-RegularItalic.otf</string>
+		<string>Graphik-Bold.otf</string>
+		<string>Graphik-Semibold.otf</string>
+		<string>Graphik-Black.otf</string>
+		<string>Graphik-Super.otf</string>
+		<string>Graphik-BlackItalic.otf</string>
+		<string>Graphik-SuperItalic.otf</string>
+		<string>Graphik-Thin.otf</string>
+		<string>Graphik-ThinItalic.otf</string>
+	</array>
+	<key>UILaunchImageFile</key>
+	<string>LaunchImage</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -54,26 +93,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Graphik-Medium.otf</string>
-		<string>Graphik-Light.otf</string>
-		<string>Graphik-Extralight.otf</string>
-		<string>Graphik-LightItalic.otf</string>
-		<string>Graphik-BoldItalic.otf</string>
-		<string>Graphik-MediumItalic.otf</string>
-		<string>Graphik-ExtralightItalic.otf</string>
-		<string>Graphik-Regular.otf</string>
-		<string>Graphik-RegularItalic.otf</string>
-		<string>Graphik-Bold.otf</string>
-		<string>Graphik-Semibold.otf</string>
-		<string>Graphik-Black.otf</string>
-		<string>Graphik-Super.otf</string>
-		<string>Graphik-BlackItalic.otf</string>
-		<string>Graphik-SuperItalic.otf</string>
-		<string>Graphik-Thin.otf</string>
-		<string>Graphik-ThinItalic.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

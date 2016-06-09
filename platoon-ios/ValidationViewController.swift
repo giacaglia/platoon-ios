@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import DigitsKit
 
 class ValidationViewController : UIViewController {
     let validationTextField = UITextField()
@@ -63,6 +64,11 @@ class ValidationViewController : UIViewController {
     }
 }
 
+extension ValidationViewController : DGTCompletionViewController {
+    func digitsAuthenticationFinishedWithSession(session: DGTSession!, error: NSError!) {
+        print("ahuehfeuh")
+    }
+}
 extension ValidationViewController : UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
