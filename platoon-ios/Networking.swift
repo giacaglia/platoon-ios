@@ -20,6 +20,36 @@ class Networking {
         }
     }
     
+    static func currentUser() -> User? {
+        let realm = try! Realm()
+        let users = Array(realm.objects(User.self))
+        if users.count > 0 {
+            return users[0]
+        }
+        return nil
+    }
+    
+    
+    static func fetchUsers(completionHandler:() -> Void) {
+        let realm = try! Realm()
+        let usersURL = baseURL + "user/"
+        Alamofire.request(.GET, usersURL)
+        .responseJSON { (response) in
+            if let _ = response.result.error {
+                return
+            }
+            if let json = response.result.value as? Dictionary<String, AnyObject>,
+                objects = json["objects"] as? [[String:AnyObject]] {
+                for object in objects {
+                    try! realm.write {
+                        realm.create(User.self, value: object, update:true)
+                        completionHandler()
+                    }
+                }
+            }
+        }
+    }
+    
     static func fetchLoads(completionHandler: () -> Void) {
         let realm = try! Realm()
         let loadsURL = baseURL + "load/"

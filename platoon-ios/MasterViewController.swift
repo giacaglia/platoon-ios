@@ -19,7 +19,7 @@ class MasterViewController: UITableViewController {
         self.title = "Loads"
         self.addLeftButton()
         self.addRightButton()
-//        self.getLoads()
+        self.fetchAllObjects()
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.navigationController?.navigationBar.barTintColor = AppearanceManager.sharedInstance.cerulean
@@ -69,9 +69,19 @@ class MasterViewController: UITableViewController {
 }
 
 extension MasterViewController {
+    private func fetchAllObjects() {
+        self.getLoads()
+        self.getUsers()
+    }
+    
+    private func getUsers() {
+        Networking.fetchUsers { 
+            print("fetched users")
+        }
+    }
+    
     private func getLoads() {
         Networking.fetchLoads { 
-            print("completion")
             let realm = try! Realm()
             self.objects = Array(realm.objects(Load.self))
             self.tableView.reloadData()
@@ -79,8 +89,7 @@ extension MasterViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.objects.count
-        return 4
+        return self.objects.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -89,8 +98,8 @@ extension MasterViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
-//        let load = self.objects[indexPath.row]
-//        cell.setLoad(load)
+        let load = self.objects[indexPath.row]
+        cell.setLoad(load)
         return cell
     }
     

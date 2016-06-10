@@ -53,7 +53,9 @@ class ProfileViewController : UIViewController {
     }
     
     private func addImageCenter() {
-        profileImgView.image = UIImage(named: "elon")
+        let currentUser = Networking.currentUser()
+        
+        profileImgView.downloadedFrom(link: currentUser?.image ?? "", contentMode: .ScaleAspectFill)
         profileImgView.layer.borderColor = UIColor.whiteColor().CGColor
         profileImgView.layer.borderWidth = 5.0
         profileImgView.layer.cornerRadius = 62
@@ -62,7 +64,7 @@ class ProfileViewController : UIViewController {
         self.view.addSubview(profileImgView)
     
         fullNameLabel.textAlignment = .Center
-        fullNameLabel.text = "Elon Musk"
+        fullNameLabel.text = currentUser?.first_name
         fullNameLabel.font = AppearanceManager.boldFont(25)
         fullNameLabel.textColor = UIColor.blackColor()
         self.view.addSubview(fullNameLabel)

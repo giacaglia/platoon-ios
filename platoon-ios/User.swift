@@ -18,4 +18,9 @@ class User : Object {
     dynamic var plate_number = ""
     dynamic var image = ""
     
+    
+    func fullName() -> String {
+        return first_name + last_name
+    }
+    
 }
