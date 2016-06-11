@@ -53,6 +53,7 @@ class Networking {
     static func fetchLoads(completionHandler: () -> Void) {
         let realm = try! Realm()
         let loadsURL = baseURL + "load/"
+        
         Alamofire.request(.GET, loadsURL).responseJSON { (response) in
             if let _ = response.result.error {
                 return

@@ -11,16 +11,20 @@ import RealmSwift
 
 
 class User : Object {
-    dynamic var first_name = ""
-    dynamic var last_name = ""
-    dynamic var phone_number = ""
-    dynamic var truck_type = ""
-    dynamic var plate_number = ""
-    dynamic var image = ""
-    
+    dynamic var id           = 0
+    dynamic var firstName   = ""
+    dynamic var lastName    = ""
+    dynamic var phoneNumber = ""
+    dynamic var truckType   = ""
+    dynamic var plateNumber = ""
+    dynamic var image        = ""
     
     func fullName() -> String {
-        return first_name + last_name
+        return firstName + " " + lastName
+    }
+    
+    override class func primaryKey() -> String? {
+        return "id"
     }
     
 }

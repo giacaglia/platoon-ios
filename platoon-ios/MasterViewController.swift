@@ -9,6 +9,7 @@
 import UIKit
 import Cartography
 import RealmSwift
+import DigitsKit
 
 class MasterViewController: UITableViewController {
     var objects = [Load]()
@@ -33,8 +34,9 @@ class MasterViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if !GetStartedViewController.dismissView {
+        if Digits.sharedInstance().session() == nil {
             self.presentViewController(GetStartedViewController(), animated: true) { }
+
         }
     }
     

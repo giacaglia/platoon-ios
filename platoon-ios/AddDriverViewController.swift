@@ -32,11 +32,11 @@ class AddDriverViewController : UITableViewController {
     
     func didPressDone() {
         let user = User()
-        user.first_name = "Giuliano"
-        user.last_name = "Giacaglia"
-        user.phone_number = "(617) 981-3206"
-        user.truck_type = "Volvo"
-        user.plate_number = "MARS17"
+        user.firstName = "Giuliano"
+        user.lastName = "Giacaglia"
+        user.phoneNumber = "(617) 981-3206"
+        user.truckType = "Volvo"
+        user.plateNumber = "MARS17"
         self.navigationController?.popViewControllerAnimated(true)
     }
 }

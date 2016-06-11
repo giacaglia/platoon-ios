@@ -33,12 +33,16 @@ class EditProfileViewController : UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        user.first_name = "Giuliano"
-        user.last_name = "Giacaglia"
-        user.phone_number = "(617) 981-3206"
-        user.truck_type = "Volvo"
-        user.plate_number = "MARS17"
-        arrayAnswers = [user.first_name, user.last_name, user.phone_number, user.truck_type, user.plate_number]
+        guard let currentUser = Networking.currentUser() else {
+            return
+        }
+        
+        user.firstName = currentUser.firstName
+        user.lastName = currentUser.lastName
+        user.phoneNumber = currentUser.phoneNumber
+        user.truckType = currentUser.truckType
+        user.plateNumber = currentUser.plateNumber
+        arrayAnswers = [user.firstName, user.lastName, user.phoneNumber, user.truckType, user.plateNumber]
     }
     
     func didPressDone() {

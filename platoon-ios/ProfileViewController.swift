@@ -64,7 +64,7 @@ class ProfileViewController : UIViewController {
         self.view.addSubview(profileImgView)
     
         fullNameLabel.textAlignment = .Center
-        fullNameLabel.text = currentUser?.first_name
+        fullNameLabel.text = currentUser?.fullName()
         fullNameLabel.font = AppearanceManager.boldFont(25)
         fullNameLabel.textColor = UIColor.blackColor()
         self.view.addSubview(fullNameLabel)
