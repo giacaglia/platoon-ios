@@ -69,4 +69,25 @@ class Networking {
             }
         }
     }
+    
+    static func fetchLocations(completionHandler: () -> Void) {
+        let realm = try! Realm()
+        let loadsURL = baseURL + "location/"
+        
+        Alamofire.request(.GET, loadsURL).responseJSON { (response) in
+            if let _ = response.result.error {
+                return
+            }
+            
+            if let json = response.result.value as? Dictionary<String, AnyObject>,
+                objects = json["objects"] as? [[String : AnyObject]] {
+                for object in objects {
+                    try! realm.write {
+                        realm.create(Load.self, value: object, update: true)
+                        completionHandler()
+                    }
+                }
+            }
+        }
+    }
 }

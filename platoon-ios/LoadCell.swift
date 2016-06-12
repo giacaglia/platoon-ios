@@ -94,15 +94,13 @@ class LoadCell : UITableViewCell {
             pickUpLabel.left   == pickUpLabel.superview!.left + 17
             pickUpLabel.height == 22
             
-            dropOffLabel.top    == dropOffLabel.superview!.top + 37
-            dropOffLabel.left   == dropOffLabel.superview!.left + 148
-            dropOffLabel.height == 22
-            
-            
             arrowImageView.top  == arrowImageView.superview!.top + 42
-            arrowImageView.left == arrowImageView.superview!.left + 110
+            arrowImageView.left == pickUpLabel.right + 6
+            
+            dropOffLabel.top    == dropOffLabel.superview!.top + 37
+            dropOffLabel.height == 22
+            dropOffLabel.left == arrowImageView.right + 6
         }
-        
         
         clockImageView.image = UIImage(named: "clock")
         self.contentView.addSubview(clockImageView)
@@ -217,6 +215,7 @@ class LoadCell : UITableViewCell {
     
     func setLoad(load: Load) {
         self.pickUpLabel.text = load.pickUp
+        
         self.dropOffLabel.text = load.dropOff
         self.timeLabel.text = load.timePickUp
         self.truckLabel.text = load.loadType
@@ -232,6 +231,10 @@ class LoadCell : UITableViewCell {
         mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
         mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
         priceMileLabel.attributedText = mileMutableString
+
+        //resize the labeltext
+        let labelTextWidth = self.pickUpLabel.intrinsicContentSize().width
+
     }
     
 }

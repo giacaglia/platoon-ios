@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class User : Object {
     dynamic var id           = 0
     dynamic var firstName   = ""

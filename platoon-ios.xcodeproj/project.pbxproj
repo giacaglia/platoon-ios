@@ -16,6 +16,7 @@
 		883470A71D09CB12008D5174 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 883470A31D09CB12008D5174 /* DigitsKitResources.bundle */; };
 		883470A81D09CB12008D5174 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883470A41D09CB12008D5174 /* TwitterCore.framework */; };
 		883470AA1D0B5701008D5174 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883470A91D0B5701008D5174 /* Extensions.swift */; };
+		883470AC1D0CBFCC008D5174 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883470AB1D0CBFCC008D5174 /* Location.swift */; };
 		884C8D911CE66E2600448E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D901CE66E2600448E70 /* AppDelegate.swift */; };
 		884C8D931CE66E2600448E70 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D921CE66E2600448E70 /* MasterViewController.swift */; };
 		884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C8D941CE66E2600448E70 /* DetailViewController.swift */; };
@@ -123,6 +124,7 @@
 		883470A31D09CB12008D5174 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
 		883470A41D09CB12008D5174 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		883470A91D0B5701008D5174 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		883470AB1D0CBFCC008D5174 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		884C8D8D1CE66E2600448E70 /* platoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = platoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884C8D901CE66E2600448E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884C8D921CE66E2600448E70 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				88BB34DC1CF6437C00D47A1C /* Load.swift */,
 				88BB34E01CF6444100D47A1C /* Company.swift */,
 				884EB2441CFDEFA500987CAD /* User.swift */,
+				883470AB1D0CBFCC008D5174 /* Location.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				884C8D951CE66E2600448E70 /* DetailViewController.swift in Sources */,
 				88BB348A1CF4E7C300D47A1C /* DetailsViewController.swift in Sources */,
 				88BB34861CF4D77000D47A1C /* PhoneTextField.swift in Sources */,
+				883470AC1D0CBFCC008D5174 /* Location.swift in Sources */,
 				884EB2431CFDEE9900987CAD /* ProfileViewController.swift in Sources */,
 				884C8D931CE66E2600448E70 /* MasterViewController.swift in Sources */,
 				88BB34841CF4D74A00D47A1C /* ValidationViewController.swift in Sources */,
