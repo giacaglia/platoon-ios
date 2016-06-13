@@ -109,9 +109,17 @@ class TripPlanningViewController: UIViewController {
             tableView.bottom == tableView.superview!.bottom
         }
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        dateCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        dateCollectionView.contentInset = UIEdgeInsetsMake(0, 20, 0, 0)
+        self.dateCollectionView.scrollToItemAtIndexPath(selectedIndex, atScrollPosition: .Left, animated: false)
+        let tableIndexPath = NSIndexPath(forRow:0, inSection: selectedIndex.row)
+        self.tableView.scrollToRowAtIndexPath(tableIndexPath, atScrollPosition: .Top, animated: false)
     }
 }
 
