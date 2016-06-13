@@ -74,11 +74,18 @@ extension MasterViewController {
     private func fetchAllObjects() {
         self.getLoads()
         self.getUsers()
+        self.getLocations()
     }
     
     private func getUsers() {
         Networking.fetchUsers { 
             print("fetched users")
+        }
+    }
+    
+    private func getLocations() {
+        Networking.fetchLocations { 
+            print("fetched locations")
         }
     }
     
@@ -107,6 +114,8 @@ extension MasterViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        self.navigationController?.pushViewController(LoadViewController(), animated: true)
+        let loadVC = LoadViewController()
+        loadVC.load = self.objects[indexPath.row]
+        self.navigationController?.pushViewController(loadVC, animated: true)
     }
 }

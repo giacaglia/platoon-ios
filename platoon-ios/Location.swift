@@ -14,10 +14,15 @@ class Location : Object {
     dynamic var streetAddress = ""
     dynamic var city          = ""
     dynamic var state         = ""
-    dynamic var latitude      = ""
-    dynamic var longitude     = ""
+    dynamic var latitude      = 0.0
+    dynamic var longitude     = 0.0
 
     override class func primaryKey() -> String? {
         return "id"
     }
+    
+    func fullAddress() -> String {
+        return streetAddress + ", " + city + ", " + state
+    }
+    
 }

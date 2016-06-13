@@ -29,6 +29,15 @@ class Networking {
         return nil
     }
     
+    static func getLocation(i :Int) -> Location? {
+        let realm = try! Realm()
+        let locations = Array(realm.objects(Location.self))
+        if locations.count > i {
+            return locations[i]
+        }
+        return nil
+    }
+    
     
     static func fetchUsers(completionHandler:() -> Void) {
         let realm = try! Realm()
@@ -63,9 +72,9 @@ class Networking {
                 for object in objects {
                     try! realm.write {
                         realm.create(Load.self, value: object, update: true)
-                        completionHandler()
                     }
                 }
+                completionHandler()
             }
         }
     }
@@ -83,10 +92,10 @@ class Networking {
                 objects = json["objects"] as? [[String : AnyObject]] {
                 for object in objects {
                     try! realm.write {
-                        realm.create(Load.self, value: object, update: true)
-                        completionHandler()
+                        realm.create(Location.self, value: object, update: true)
                     }
                 }
+                completionHandler()
             }
         }
     }

@@ -15,8 +15,26 @@ class LoadViewController : UIViewController {
     let topMapView = MKMapView()
     let tableView = UITableView(frame: CGRectZero, style: .Grouped)
     let questionTitles = ["Pickup Location", "Dropoff Location", "Pickup Time", "Weight", "Description of Pallets", "Reference #"]
-    let questionAnswers = ["197 Kent St, Brookline, MA", "750 Atlantic Ave, Boston, MA", "10:50 am", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
+    var questionAnswers = ["197 Kent St, Brookline, MA", "750 Atlantic Ave, Boston, MA", "10:50 am", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
     let imageNames = ["detailLocation", "detailLocation", "detailClock", "detailScale", "detailPallet", "detailScale"]
+    let totalPriceLabel = UILabel()
+    let priceMileLabel = UILabel()
+    var load = Load() {
+        didSet {
+            let priceTextString =  "$" + String(load.totalPrice) + "0"
+            let myMutableString = NSMutableAttributedString(string: priceTextString, attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(20)])
+            myMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(20), range: NSRange(location:0,length:1))
+            totalPriceLabel.attributedText = myMutableString
+            
+            let pricePerMile = "$" + String(load.pricePerLoad) + "0/mile"
+            let mileMutableString = NSMutableAttributedString(string: pricePerMile, attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(14)])
+            mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
+            mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
+            priceMileLabel.attributedText = mileMutableString
+        }
+    }
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
@@ -24,7 +42,15 @@ class LoadViewController : UIViewController {
         self.addRightBarButton()
         
         self.view.addSubview(mapView)
-        self.addMap(mapView)
+        if let location = Networking.getLocation(0) {
+            self.addMap(mapView, location: location)
+//            let identifier = "Pick up"
+//            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+//            if annotationView == nil {
+//                annotationView = MKPinAnnotationView(annotation: MKPointAnnotation(), reuseIdentifier: identifier)
+//                annotationView!.canShowCallout = true
+//            }
+        }
         
         constrain(mapView) { mapView in
             mapView.top    == mapView.superview!.top + 64
@@ -34,7 +60,9 @@ class LoadViewController : UIViewController {
         }
         
         self.view.addSubview(topMapView)
-        self.addMap(topMapView)
+        if let location = Networking.getLocation(0) {
+            self.addMap(topMapView, location: location)
+        }
         
         topMapView.layer.cornerRadius = 92
         topMapView.layer.borderColor = AppearanceManager.sharedInstance.cerulean.CGColor
@@ -75,22 +103,13 @@ class LoadViewController : UIViewController {
         lineView.backgroundColor = .whiteColor()
         bookNowButton.addSubview(lineView)
         
-        let totalPrice = UILabel()
-        let myMutableString = NSMutableAttributedString(string: "$200.00", attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(20)])
-        myMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(20), range: NSRange(location:0,length:1))
-        totalPrice.attributedText = myMutableString
-        totalPrice.textColor = .whiteColor()
-        bookNowButton.addSubview(totalPrice)
+        totalPriceLabel.textColor = .whiteColor()
+        bookNowButton.addSubview(totalPriceLabel)
         
-        let priceMileLabel = UILabel()
         priceMileLabel.textColor = .whiteColor()
-        let mileMutableString = NSMutableAttributedString(string: "$1.60/mile", attributes: [NSFontAttributeName:AppearanceManager.semiboldFont(14)])
-        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
-        mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
-        priceMileLabel.attributedText = mileMutableString
         bookNowButton.addSubview(priceMileLabel)
         
-        constrain(bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel) { bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel in
+        constrain(bookNowButton, bookNowLabel, lineView, totalPriceLabel, priceMileLabel) { bookNowButton, bookNowLabel, lineView, totalPrice, priceMileLabel in
             bookNowButton.bottom == bookNowButton.superview!.bottom
             bookNowButton.left   == bookNowButton.superview!.left
             bookNowButton.right  == bookNowButton.superview!.right
@@ -112,6 +131,14 @@ class LoadViewController : UIViewController {
         }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let pickUpLocation = Networking.getLocation(0)?.fullAddress() ?? ""
+        let dropOffLocation = Networking.getLocation(1)?.fullAddress() ?? ""
+        questionAnswers = [pickUpLocation, dropOffLocation, "10:50 am", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
+
+        tableView.reloadData()
+    }
     
     func addRightBarButton() {
         let button =  UIButton(type: .Custom)
@@ -144,11 +171,14 @@ class LoadViewController : UIViewController {
         self.view.addSubview(blurEffectView)
     }
     
-    private func addMap(mapView:MKMapView) {
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+    private func addMap(mapView:MKMapView, location: Location) {
+        let initialLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+        
+   
+
     }
 }
 
