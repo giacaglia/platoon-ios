@@ -13,6 +13,7 @@ import DigitsKit
 
 class MasterViewController: UITableViewController {
     var objects = [Load]()
+    var companies = [Company]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,15 @@ extension MasterViewController {
         self.getLoads()
         self.getUsers()
         self.getLocations()
+        self.getCompanies()
+    }
+    
+    private func getCompanies() {
+        Networking.fetchCompanies {
+            let realm = try! Realm()
+            self.companies = Array(realm.objects(Company.self))
+            self.tableView.reloadData()
+        }
     }
     
     private func getUsers() {
@@ -109,6 +119,10 @@ extension MasterViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
         let load = self.objects[indexPath.row]
         cell.setLoad(load)
+        if indexPath.row < self.companies.count {
+            let company = self.companies[indexPath.row]
+            cell.setCompany(company)
+        }
         return cell
     }
     
@@ -116,6 +130,7 @@ extension MasterViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         let loadVC = LoadViewController()
         loadVC.load = self.objects[indexPath.row]
+        loadVC.company = self.companies[indexPath.row]
         self.navigationController?.pushViewController(loadVC, animated: true)
     }
 }

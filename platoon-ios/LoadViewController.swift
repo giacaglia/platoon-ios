@@ -41,13 +41,30 @@ class LoadViewController : UIViewController {
             questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, load.loadType, String(load.weight), palletsDescription, load.referenceNumber]
         }
     }
+    
+    var company = Company() {
+        didSet {
+            self.title = company.name
+            
+            let button =  UIButton(type: .Custom)
+            button.setImage(UIImage(named: "white_star"), forState: .Normal)
+            button.frame = CGRectMake(0, 0, 53, 31)
+            button.imageEdgeInsets = UIEdgeInsetsMake(-2, 30, 2, -30)
+            let label = UILabel(frame: CGRectMake(3, 5, 50, 20))
+            label.font = AppearanceManager.semiboldFont(19)
+            label.text = String(company.rating)
+            label.textAlignment = .Center
+            label.textColor = UIColor.whiteColor()
+            button.addSubview(label)
+            let barButton = UIBarButtonItem(customView: button)
+            self.navigationItem.rightBarButtonItem = barButton
+        }
+    }
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteColor()
-        self.title = "Greylock Importers"
-        self.addRightBarButton()
         
         self.view.addSubview(mapView)
         if let location = Networking.getLocation(0) {
@@ -144,20 +161,6 @@ class LoadViewController : UIViewController {
         self.tableView.reloadData()
     }
     
-    func addRightBarButton() {
-        let button =  UIButton(type: .Custom)
-        button.setImage(UIImage(named: "white_star"), forState: .Normal)
-        button.frame = CGRectMake(0, 0, 53, 31)
-        button.imageEdgeInsets = UIEdgeInsetsMake(-2, 30, 2, -30)
-        let label = UILabel(frame: CGRectMake(3, 5, 50, 20))
-        label.font = AppearanceManager.semiboldFont(19)
-        label.text = "4.0"
-        label.textAlignment = .Center
-        label.textColor = UIColor.whiteColor()
-        button.addSubview(label)
-        let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItem = barButton
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

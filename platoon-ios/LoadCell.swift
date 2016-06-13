@@ -234,7 +234,10 @@ class LoadCell : UITableViewCell {
 
         //resize the labeltext
 //        let labelTextWidth = self.pickUpLabel.intrinsicContentSize().width
-
     }
     
+    func setCompany(company: Company) {
+        nameLabel.text = company.name
+        ratingLabel.text = String(company.rating)
+    }
 }
