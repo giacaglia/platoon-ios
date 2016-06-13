@@ -118,11 +118,14 @@ class TripPlanningViewController: UIViewController {
 
 extension TripPlanningViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        let calendar = NSCalendar.currentCalendar()
+        let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: NSDate())
+        let numDays = range.length
+        return numDays
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -142,7 +145,15 @@ extension TripPlanningViewController : UITableViewDelegate, UITableViewDataSourc
         detailsLabel.textAlignment = .Left
         detailsLabel.textColor = .whiteColor()
         detailsLabel.font = AppearanceManager.semiboldFont(20)
-        detailsLabel.text = "November, 7th"
+        
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([ .Day, .Month], fromDate: NSDate())
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        let month = components.month
+        let months = dateFormatter.monthSymbols
+        let monthSymbol = months[month-1]
+
+        detailsLabel.text = monthSymbol + ", " + String(section + 1)
         detailsView.addSubview(detailsLabel)
         return detailsView
     }
@@ -162,7 +173,7 @@ extension TripPlanningViewController : UICollectionViewDelegate, UICollectionVie
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DateCell.cellIdentifier(), forIndexPath: indexPath) as! DateCell
-        cell.dateLabel.text = String(indexPath.row)
+        cell.dateLabel.text = String(indexPath.row + 1)
 
         if indexPath.row == 9 || indexPath.row == 2 {
             cell.setUpdated(true)
@@ -182,8 +193,8 @@ extension TripPlanningViewController : UICollectionViewDelegate, UICollectionVie
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath
         collectionView.reloadData()
-        let indexPath = NSIndexPath(forRow: 0, inSection: 1)
-        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        let tableViewIndexPath = NSIndexPath(forRow: 0, inSection: indexPath.row)
+        tableView.scrollToRowAtIndexPath(tableViewIndexPath, atScrollPosition: .Top, animated: true)
     }
 }
 

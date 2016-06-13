@@ -84,6 +84,7 @@ extension MasterViewController {
             let realm = try! Realm()
             self.companies = Array(realm.objects(Company.self))
             self.tableView.reloadData()
+            print("fetched companies")
         }
     }
     
@@ -117,8 +118,10 @@ extension MasterViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(LoadCell.cellIdentifier(), forIndexPath: indexPath) as! LoadCell
-        let load = self.objects[indexPath.row]
-        cell.setLoad(load)
+        if indexPath.row < self.objects.count {
+            let load = self.objects[indexPath.row]
+            cell.setLoad(load)
+        }
         if indexPath.row < self.companies.count {
             let company = self.companies[indexPath.row]
             cell.setCompany(company)
