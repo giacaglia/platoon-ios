@@ -110,10 +110,6 @@ class TripPlanningViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         dateCollectionView.contentInset = UIEdgeInsetsMake(0, 20, 0, 0)
@@ -168,6 +164,15 @@ extension TripPlanningViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView == tableView {
+            let offset = tableView.contentOffset.y
+            let indexPath = tableView.indexPathForRowAtPoint(CGPointMake(0, offset))
+            let collectionIndexPath = NSIndexPath(forItem: indexPath!.section, inSection: 0)
+            dateCollectionView.scrollToItemAtIndexPath(collectionIndexPath, atScrollPosition: .Left, animated: true)
+        }
     }
 }
 
