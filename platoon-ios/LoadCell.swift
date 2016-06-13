@@ -233,7 +233,7 @@ class LoadCell : UITableViewCell {
         priceMileLabel.attributedText = mileMutableString
 
         //resize the labeltext
-        let labelTextWidth = self.pickUpLabel.intrinsicContentSize().width
+//        let labelTextWidth = self.pickUpLabel.intrinsicContentSize().width
 
     }
     

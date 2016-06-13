@@ -31,6 +31,12 @@ class LoadViewController : UIViewController {
             mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:0,length:1))
             mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
             priceMileLabel.attributedText = mileMutableString
+            
+            
+            let pickUpLocation = Networking.getLocation(0)?.fullAddress() ?? ""
+            let dropOffLocation = Networking.getLocation(1)?.fullAddress() ?? ""
+            let palletsDescription = String(load.numberPallets) + " pallets - 40 in x 48 in x 48 in"
+            questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, String(load.weight), palletsDescription, load.referenceNumber]
         }
     }
    
@@ -133,11 +139,7 @@ class LoadViewController : UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let pickUpLocation = Networking.getLocation(0)?.fullAddress() ?? ""
-        let dropOffLocation = Networking.getLocation(1)?.fullAddress() ?? ""
-        questionAnswers = [pickUpLocation, dropOffLocation, "10:50 am", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
-
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func addRightBarButton() {
