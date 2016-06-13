@@ -32,10 +32,9 @@ class LoadViewController : UIViewController {
             mileMutableString.addAttribute(NSFontAttributeName, value: AppearanceManager.lightFont(14), range: NSRange(location:5,length:5))
             priceMileLabel.attributedText = mileMutableString
             
-            
             let pickUpLocation = Networking.getLocation(0)?.fullAddress() ?? ""
             let dropOffLocation = Networking.getLocation(1)?.fullAddress() ?? ""
-            let palletsDescription = String(load.numberPallets) + " pallets - 40 in x 48 in x 48 in"
+            let palletsDescription = String(load.numberPallets) + " pallets - " +  String(load.pallet_length) + " in x " + String(load.pallet_width) + " in x " + String(load.pallet_height) + " in"
             questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, String(load.weight), palletsDescription, load.referenceNumber]
         }
     }

@@ -21,6 +21,10 @@ class Load : Object {
     dynamic var weight          = 8000.00
     dynamic var referenceNumber = "41823817"
     
+    dynamic var pallet_length = 40
+    dynamic var pallet_width  = 48
+    dynamic var pallet_height = 48
+    
     override class func primaryKey() -> String? {
         return "id"
     }
