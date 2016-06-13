@@ -14,11 +14,13 @@ class LoadViewController : UIViewController {
     let mapView = MKMapView()
     let topMapView = MKMapView()
     let tableView = UITableView(frame: CGRectZero, style: .Grouped)
-    let questionTitles = ["Pickup Location", "Dropoff Location", "Pickup Time", "Weight", "Description of Pallets", "Reference #"]
-    var questionAnswers = ["197 Kent St, Brookline, MA", "750 Atlantic Ave, Boston, MA", "10:50 am", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
-    let imageNames = ["detailLocation", "detailLocation", "detailClock", "detailScale", "detailPallet", "detailScale"]
+    let questionTitles = ["Pickup Location", "Dropoff Location", "Pickup Time", "Truck type", "Weight", "Description of Pallets", "Reference #"]
+    var questionAnswers = ["197 Kent St, Brookline, MA", "750 Atlantic Ave, Boston, MA", "10:50 am", "Reefeer", "8,000 lbs", "4 pallets - 40 in x 48 in x 48 in", "1329903"]
+    let imageNames = ["detailLocation", "detailLocation", "detailClock", "detailCargo", "detailScale", "detailPallet", "detailScale"]
     let totalPriceLabel = UILabel()
     let priceMileLabel = UILabel()
+    
+    
     var load = Load() {
         didSet {
             let priceTextString =  "$" + String(load.totalPrice) + "0"
@@ -35,7 +37,8 @@ class LoadViewController : UIViewController {
             let pickUpLocation = Networking.getLocation(0)?.fullAddress() ?? ""
             let dropOffLocation = Networking.getLocation(1)?.fullAddress() ?? ""
             let palletsDescription = String(load.numberPallets) + " pallets - " +  String(load.pallet_length) + " in x " + String(load.pallet_width) + " in x " + String(load.pallet_height) + " in"
-            questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, String(load.weight), palletsDescription, load.referenceNumber]
+            
+            questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, load.loadType, String(load.weight), palletsDescription, load.referenceNumber]
         }
     }
    
