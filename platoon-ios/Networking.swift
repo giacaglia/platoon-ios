@@ -11,8 +11,8 @@ import Alamofire
 import RealmSwift
 
 class Networking {
-    static let baseURL = "http://localhost:5000/api/"
-    
+//    static let baseURL = "http://localhost:5000/api/"
+    static let baseURL = "https://platoon.herokuapp.com/api/"
     static func validate(phoneNumber: String) {
         let validateURL = baseURL + "validate/"
         Alamofire.request(.GET, validateURL).responseJSON { (response) in

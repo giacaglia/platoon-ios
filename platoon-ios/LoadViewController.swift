@@ -38,7 +38,7 @@ class LoadViewController : UIViewController {
             let dropOffLocation = Networking.getLocation(1)?.fullAddress() ?? ""
             let palletsDescription = String(load.numberPallets) + " pallets - " +  String(load.pallet_length) + " in x " + String(load.pallet_width) + " in x " + String(load.pallet_height) + " in"
             
-            questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, load.loadType, String(load.weight), palletsDescription, load.referenceNumber]
+            questionAnswers = [pickUpLocation, dropOffLocation, load.timePickUp, load.loadType,  String(format: "%.2f", load.weight) + " lbs", palletsDescription, load.referenceNumber]
         }
     }
     
@@ -183,9 +183,6 @@ class LoadViewController : UIViewController {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
-        
-   
-
     }
 }
 
