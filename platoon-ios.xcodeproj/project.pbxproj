@@ -240,7 +240,7 @@
 				884C8D9B1CE66E2600448E70 /* LaunchScreen.storyboard */,
 				88BB347F1CF4B1BA00D47A1C /* AppearanceManager.swift */,
 				8834709E1D09C000008D5174 /* Networking.swift */,
-				88BB34DE1CF6438600D47A1C /* Extensions */,
+				88BB34DE1CF6438600D47A1C /* Subclasses */,
 				88BB34DF1CF6439D00D47A1C /* Objects */,
 				88BB34771CF49E5E00D47A1C /* ViewControllers */,
 				884C8D991CE66E2600448E70 /* Assets.xcassets */,
@@ -338,12 +338,12 @@
 			path = "platoon-ios";
 			sourceTree = "<group>";
 		};
-		88BB34DE1CF6438600D47A1C /* Extensions */ = {
+		88BB34DE1CF6438600D47A1C /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
 				88BB34851CF4D77000D47A1C /* PhoneTextField.swift */,
 			);
-			name = Extensions;
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 		88BB34DF1CF6439D00D47A1C /* Objects */ = {
