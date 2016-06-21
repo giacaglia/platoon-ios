@@ -72,9 +72,6 @@
 		88BB34EA1CF7AA1E00D47A1C /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34E91CF7AA1E00D47A1C /* TripPlanningViewController.swift */; };
 		88BB34EC1CF7ACF400D47A1C /* LoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB34EB1CF7ACF400D47A1C /* LoadCell.swift */; };
 		88C13A7C1D05FB85001EDB5C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C13A7B1D05FB85001EDB5C /* EditProfileViewController.swift */; };
-		9B544325E932660940F5AB10 /* libPods-platoon-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */; };
-		B64911AC8CA81AE1F6BC2A4C /* libPods-platoon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A899AB353918F671E86DB9A /* libPods-platoon.a */; };
-		F9DD2D41B0D60CD2A4DB08F7 /* libPods-platoon-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,9 +109,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A899AB353918F671E86DB9A /* libPods-platoon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-platoon-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		495E183B13336C44BF580F5C /* Pods-platoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon/Pods-platoon.release.xcconfig"; sourceTree = "<group>"; };
 		70C9655240B38591B8BD4562 /* Pods-platoon-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-platoon-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-platoon-iosUITests/Pods-platoon-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8834709A1D09BFA8008D5174 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -202,7 +196,6 @@
 				88BB34DA1CF63A8100D47A1C /* Realm.framework in Frameworks */,
 				8834709C1D09BFB9008D5174 /* Alamofire.framework in Frameworks */,
 				88BB347B1CF4A78200D47A1C /* Cartography.framework in Frameworks */,
-				B64911AC8CA81AE1F6BC2A4C /* libPods-platoon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +203,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9DD2D41B0D60CD2A4DB08F7 /* libPods-platoon-iosTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +210,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B544325E932660940F5AB10 /* libPods-platoon-iosUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,9 +315,6 @@
 				88BB34E21CF647C900D47A1C /* RealmSwift.framework */,
 				88BB34D81CF63A7A00D47A1C /* Realm.framework */,
 				88BB347A1CF4A78200D47A1C /* Cartography.framework */,
-				2A899AB353918F671E86DB9A /* libPods-platoon.a */,
-				23C5EF6646CFB8F7D4E2DB19 /* libPods-platoon-iosTests.a */,
-				3BA03F707A557D7B7A72BD1D /* libPods-platoon-iosUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
